@@ -1,0 +1,1037 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"controller",
+				"controller"
+			],
+			[
+				"list",
+				"list"
+			],
+			[
+				"contro",
+				"controllerAs"
+			],
+			[
+				"star",
+				"starRating"
+			],
+			[
+				"fo",
+				"font-style"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"bor",
+				"border-bottom"
+			],
+			[
+				"appen",
+				"appendTo"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"marg",
+				"margin-bottom"
+			],
+			[
+				"li",
+				"list-style"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"bu",
+				"buildSkillList"
+			],
+			[
+				"ski",
+				"skillList"
+			],
+			[
+				"skill",
+				"skillValue"
+			],
+			[
+				"background-",
+				"background-color"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"re",
+				"responseText"
+			],
+			[
+				"prod",
+				"products"
+			],
+			[
+				"data",
+				"data"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"tex",
+				"text-transform"
+			],
+			[
+				"mag",
+				"margin-right"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"pro",
+				"products"
+			],
+			[
+				"produ",
+				"productItem"
+			],
+			[
+				"rende",
+				"renderList"
+			],
+			[
+				"get",
+				"getProduct"
+			],
+			[
+				"render",
+				"renderList"
+			],
+			[
+				"pr",
+				"products"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"thum",
+				"thums"
+			],
+			[
+				"hei",
+				"height"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"body",
+				"body"
+			],
+			[
+				"port",
+				"portraitUrl"
+			],
+			[
+				"portr",
+				"portraitUrl"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"dra",
+				"drag"
+			],
+			[
+				"c",
+				"case"
+			],
+			[
+				"Dra",
+				"Dragons"
+			],
+			[
+				"bk",
+				"background-color"
+			],
+			[
+				"col-",
+				"col-md-6"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"appe",
+				"appendTo"
+			],
+			[
+				"max",
+				"maxPf"
+			],
+			[
+				"va",
+				"val"
+			],
+			[
+				"mon",
+				"monsters"
+			],
+			[
+				"mob",
+				"mobdetails"
+			],
+			[
+				"l",
+				"length"
+			],
+			[
+				"app",
+				"appendTo"
+			],
+			[
+				"kil",
+				"killButton"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"ann",
+				"announcement-text"
+			],
+			[
+				"model",
+				"modelDetails"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"h",
+				"h2	Tag"
+			],
+			[
+				"attr",
+				"attributes"
+			],
+			[
+				"mons",
+				"monsterDetails"
+			],
+			[
+				"val",
+				"value"
+			],
+			[
+				"tem",
+				"tempId"
+			],
+			[
+				"sp",
+				"spMagic"
+			],
+			[
+				"enc",
+				"encounters"
+			],
+			[
+				"en",
+				"encounters"
+			],
+			[
+				"encou",
+				"encounters"
+			],
+			[
+				"head",
+				"header	Tag"
+			],
+			[
+				"item",
+				"itemList"
+			],
+			[
+				"temp",
+				"tempItemList"
+			],
+			[
+				"paddn",
+				"padding-right"
+			],
+			[
+				"bord",
+				"border"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"go",
+				"goldValue"
+			],
+			[
+				"is",
+				"instanceof"
+			],
+			[
+				"att",
+				"attributes"
+			],
+			[
+				"rule",
+				"rules"
+			],
+			[
+				"bo",
+				"border-bottom"
+			],
+			[
+				"mr",
+				"margin"
+			],
+			[
+				"conte",
+				"context"
+			],
+			[
+				"top",
+				"topBar"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"kill",
+				"killContainer"
+			],
+			[
+				"f",
+				"fBox"
+			],
+			[
+				"mat",
+				"margin-bottom"
+			],
+			[
+				"bar",
+				"background-color"
+			],
+			[
+				"gol",
+				"goldValue"
+			],
+			[
+				"ini",
+				"initiative"
+			],
+			[
+				"append",
+				"appendTo"
+			],
+			[
+				"for",
+				"for	for (…) {…} (Improved Native For-Loop)"
+			],
+			[
+				"spe",
+				"spec"
+			],
+			[
+				"b",
+				"mBody"
+			],
+			[
+				"mont",
+				"monster"
+			],
+			[
+				"boo",
+				"bottom"
+			],
+			[
+				"sty",
+				"style"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"t",
+				"type"
+			],
+			[
+				"per",
+				"percerntValue"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"arm",
+				"armatura"
+			],
+			[
+				"armor",
+				"armor"
+			],
+			[
+				"dann",
+				"dannoArma"
+			],
+			[
+				"char",
+				"charDiv"
+			],
+			[
+				"ape",
+				"appendTo"
+			],
+			[
+				"cha",
+				"charDiv"
+			],
+			[
+				"lo",
+				"log"
+			],
+			[
+				"daa",
+				"damage"
+			],
+			[
+				"curre",
+				"currentSalute"
+			],
+			[
+				"cu",
+				"currentSalute"
+			],
+			[
+				"arma",
+				"armatura"
+			],
+			[
+				"ar",
+				"armatura"
+			],
+			[
+				"dama",
+				"damage"
+			],
+			[
+				"roll",
+				"rolls"
+			],
+			[
+				"poo",
+				"poolRoll"
+			],
+			[
+				"abili",
+				"abilitaName"
+			],
+			[
+				"Arm",
+				"ArmidaMischia"
+			],
+			[
+				"getAbi",
+				"getAbilitaValue"
+			],
+			[
+				"armo",
+				"armor"
+			],
+			[
+				"bui",
+				"buildInitiative"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"selected_items":
+		[
+		],
+		"width": 378.0
+	},
+	"console":
+	{
+		"height": 148.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/css/style.css",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/rating.html",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/skill.html",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/js/angular-route.js",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/asset/personaggi.js",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/js/main.js",
+		"/Users/marcomascia/Google Drive/Progetti/Esis/Yoox_old/style.less",
+		"/Users/marcomascia/Google Drive/Progetti/Esis/Yoox/css/mediaquery.css",
+		"/Users/marcomascia/Google Drive/Progetti/Esis/Yoox/css/main.css",
+		"/Users/marcomascia/Downloads/jQuery-bootstrap-master/demo.html",
+		"/Users/marcomascia/Google Drive/Progetti/Esis/Yoox/css/main.less",
+		"/Users/marcomascia/Google Drive/Progetti/Esis/Yoox/crossdomain.xml",
+		"/Users/marcomascia/Downloads/Responsive-jQuery-News-Ticker-Plugin-with-Bootstrap-3-Bootstrap-News-Box/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/Esis/Yoox/initializr/js/main.js",
+		"/Users/marcomascia/Google Drive/Progetti/Esis/Yoox/initializr/css/main.less",
+		"/Users/marcomascia/Google Drive/Progetti/Esis/Yoox/initializr/css/main.css",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/css/main.css",
+		"/Users/marcomascia/Google Drive/Progetti/wod sheet/crossdomain.xml",
+		"/Users/marcomascia/Projects/Patrimony/fugu-conf.properties",
+		"/Users/marcomascia/Google Drive/Progetti/CSS/TinyCity/css/main.css",
+		"/Users/marcomascia/Google Drive/Progetti/CSS/TinyCity/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/Game/EpicWar/js/GCore.js",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/resources/personaggi.js",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/js/charSheet.js",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/index[Conflitto].html",
+		"/Users/marcomascia/Google Drive/Progetti/Game/sandbox/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/images/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/AperitivoItinerante/js/app.js",
+		"/Users/marcomascia/Downloads/frontEnd_candidate_task.txt",
+		"/Users/marcomascia/Google Drive/Progetti/ExMachina/spa/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/ExMachina/spa/js/lazy.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJsAngular/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/ExMachina/spa/js/main.js",
+		"/Users/marcomascia/Google Drive/Progetti/ExMachina/spa/js/untitled.js",
+		"/Users/marcomascia/Google Drive/Progetti/ExMachina/spa/assets/data/data.json",
+		"/Users/marcomascia/Google Drive/Progetti/ExMachina/spa/assets/data/one.json",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/pg-attribute.html",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/resources/personaggi.js",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/style.less",
+		"/Users/marcomascia/Desktop/Golem/index.html",
+		"/Users/marcomascia/Desktop/Golem/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/mediaquery.less",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/css/mediaquery.css",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/css/style.css",
+		"/Users/marcomascia/Google Drive/Progetti/Golem/js/main.js",
+		"/Users/marcomascia/Google Drive/GDR/Indie/Cthulhu dark/Chtulhu dark.pdf",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/mediaquery.less",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ux.txt",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/style.less",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/css/style.css",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/js/main.js",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/readme.txt",
+		"/Users/marcomascia/Downloads/jquery-advanced-news-ticker-master/jquery.newsTicker.js",
+		"/Users/marcomascia/Downloads/Responsive-jQuery-News-Ticker-Plugin-with-Bootstrap-3-Bootstrap-News-Box/scripts/jquery.bootstrap.newsbox.custom.js",
+		"/Users/marcomascia/Downloads/mgeraci-Less-Boilerplate-bbf3b43/boilerplate.less",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/css/mediaquery.css",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/assets/data/two.json",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/assets/data/four.json",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/assets/data/one.json",
+		"/Users/marcomascia/Google Drive/Progetti/ObjectWay/Project/ObjectWay/assets/data/three.json",
+		"/Users/marcomascia/Downloads/Responsive-jQuery-News-Ticker-Plugin-with-Bootstrap-3-Bootstrap-News-Box/css/site.css",
+		"/Users/marcomascia/Downloads/html5-boilerplate-4.3.0/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/CSS/3d css/css/main.css",
+		"/Users/marcomascia/Google Drive/Progetti/Muryoma/css/style.css",
+		"/Users/marcomascia/Google Drive/Progetti/CSS/3d css/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs Angular/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs Angular/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/js/namebuilder.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/js/main.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/mail.php",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/magic.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/monsters_names.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/mailer.php",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/style.css",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/calculator.css",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/names.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/blank-page.html",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/styles.css",
+		"/Users/marcomascia/Google Drive/Progetti/Yoox/js/app.js",
+		"/Users/marcomascia/Google Drive/Progetti/Yoox/css/mediaquery[Conflict].css",
+		"/Users/marcomascia/Google Drive/Progetti/Yoox/css/style.css",
+		"/Users/marcomascia/Google Drive/Progetti/Yoox/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/icons.css",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/monsters_detail.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/monsters_table.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/jquery.qtip.min.css",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/js/jquery.qtip.min.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/rules.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/mediaquery.css",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/responsive-nav.css",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/styles.css",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/js/gold.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/magicitems.js",
+		"/Users/marcomascia/Downloads/Respond-Menu/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/beautons.css",
+		"/Users/marcomascia/Projects/All/fugu-conf.properties",
+		"/Users/marcomascia/Desktop/magic.js",
+		"/Users/marcomascia/springsource/sts-3.4.0.RELEASE/STS.app/Contents/MacOS/STS.ini",
+		"/Users/marcomascia/Google Drive/Progetti/WqMaster/dev_wqmaster/resources/rules/rpb-rules.xml",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/layouts/pricing.css",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/pure.css",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/css/style.css",
+		"/Users/marcomascia/Downloads/pure-layout-pricing/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/monsters.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/orks_and_goblins.js",
+		"/Users/marcomascia/Google Drive/Progetti/WqMaster/dev_wqmaster/resources/tables/rpbook-monster-tables.xml",
+		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/monsters-table.js",
+		"/Users/marcomascia/Google Drive/Progetti/Game/zombieland/js/GCore.js",
+		"/Users/marcomascia/Projects/Deltec/fugu-conf.properties",
+		"/Users/marcomascia/Desktop/notWorking",
+		"/Users/marcomascia/Desktop/working",
+		"/Users/marcomascia/Desktop/FilterPerformance/index.html",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/resources/Qualità dell’equipaggiamento",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/css/normalize.css",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/resources/weapontags.js",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/resources/weapons.js",
+		"/Users/marcomascia/Google Drive/Documenti/Curriculum/Lettere di presentazione valide.txt",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/resources/armor.js",
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/resources/characters.xml"
+	],
+	"find":
+	{
+		"height": 66.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"span",
+			"</input>",
+			"chimica",
+			"/**",
+			"/",
+			">",
+			"<",
+			">",
+			"<",
+			"#000000",
+			"#000",
+			"#ffffff",
+			"#fff",
+			"#f1f1f1",
+			"#ccc",
+			"#cccccc",
+			"#666",
+			"h4",
+			"row",
+			"col",
+			"doub",
+			"subtitle",
+			"btnBox",
+			"itemName",
+			"grey",
+			"newsTicker",
+			"newsTickerù",
+			"newsTicker",
+			"newsTicler",
+			"works",
+			"remote",
+			"ability",
+			"40px",
+			"e",
+			"mario",
+			"my cart",
+			"70",
+			"000ho",
+			"10",
+			"@\"},",
+			"92",
+			"58",
+			"paging_two_button\n",
+			"paging_two_button",
+			"paginate",
+			"\"",
+			"td",
+			"angular",
+			"<script type=\"text/javascript\" src=\"js/angular-route.min.js\"></script> ",
+			"height",
+			"#000",
+			"result",
+			"doubCol",
+			"entry",
+			"doublecol",
+			"style",
+			"bold",
+			"white",
+			"#FFF",
+			"#FFFFFF",
+			"#F1F1F1",
+			"@light-grey",
+			"news",
+			"recent",
+			"entry",
+			"showcase",
+			"slideshow",
+			"#CCCCCC",
+			"#666",
+			"subtitle",
+			"item",
+			"subtitle",
+			"YOOX",
+			"\"",
+			"_tmp",
+			"hierarchyTypeId",
+			"VAMPIRE",
+			"hate",
+			"sorcerer",
+			"chaos",
+			"sorcerer",
+			"mark",
+			"psi",
+			"hate",
+			"chaos hero",
+			"chaos",
+			"center",
+			"bold",
+			"getMonster",
+			"skill",
+			"breath",
+			"dragon",
+			"giant",
+			"hellblade",
+			"axe of",
+			"daemon wh",
+			"bloodth",
+			"ignore",
+			"treasure",
+			"monster",
+			"treasure\n",
+			"rpb-treasure-hoard\n",
+			"treasure\n",
+			"treasure\n\n",
+			"treasure",
+			"dragon",
+			"Breathe fire",
+			"Breathe fire\n",
+			"Giant Attacks",
+			".footer",
+			"footer",
+			"	\n",
+			"getKillButton",
+			"kill",
+			"test",
+			"\"",
+			"back",
+			"portrait",
+			"dragon",
+			"monsters",
+			"</div>",
+			" <div class=\"GeneratorResultSecondaryBG\">",
+			" <div class=\"GeneratorResultPrimeBG\">",
+			"<tr>",
+			"</tr>",
+			"</td>",
+			"<tr>",
+			"&nbsp;&nbsp;</font>"
+		],
+		"highlight": false,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"%2F",
+			"%3e",
+			"%3c",
+			"%3e",
+			"%3c",
+			"@hd-color",
+			"@selection-color",
+			"@art-color",
+			"@border-color",
+			"@txt-color",
+			"@text-color",
+			"skill",
+			"'",
+			"th",
+			"",
+			"@default-grey",
+			"OBJECTWAY",
+			"'",
+			"rpb-giant-attacks",
+			"'",
+			"\",",
+			"\"",
+			"",
+			"\",",
+			"\"",
+			"",
+			"'",
+			"",
+			"'",
+			"{\"id\":\"rpb-hate\", \"value\":\"Elves\"}",
+			"\"",
+			"\",",
+			"\"",
+			"\",\"",
+			"\",",
+			"\"",
+			"",
+			"'",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"7\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"9\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"10\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"3\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"4\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"5\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"6\"}",
+			"#d30000",
+			"#980000",
+			"\"rpb-plague\"",
+			"\"rpb-paralysis\"",
+			"{\"id\":\"rpb-daemonic\", \"value\":\"-1\"}",
+			"{\"id\":\"rpb-assassinate\", \"value\":\"3+\"}",
+			"{\"id\":\"rpb-assassinate\", \"value\":\"4+\"}",
+			"{\"id\":\"rpb-assassinate\", \"value\":\"5+\"}",
+			"{\"id\":\"rpb-assassinate\", \"value\":\"6+\"}",
+			"\"pb-drag-and-rend\"",
+			"\"rpb-petrify\"",
+			"{\"id\":\"rpb-web\", \"value\":\"(1d3)\"}",
+			"{\"id\":\"rpb-web\", \"value\":\"(1d6)\"}",
+			"\"rpb-deathleap\"",
+			"{\"id\":\"rpb-frenzy\", \"value\":\"3+\"}",
+			"{\"id\":\"rpb-frenzy\", \"value\":\"4+\"}",
+			"{\"id\":\"rpb-frenzy\", \"value\":\"6+\"}",
+			"{\"id\":\"rpb-frenzy\", \"value\":\"5+\"}",
+			"\"rpb-weeping-blade\"",
+			"{\"id\":\"rpb-magic-drain\", \"value\":\"4+\"}",
+			"{\"id\":\"rpb-magic-drain\", \"value\":\"5+\"}",
+			"{\"id\":\"rpb-magic-drain\", \"value\":\"6+\"}",
+			"\"rpb-gang-up\"",
+			"\"rpb-vomit\"",
+			"\"rpb-breathe-fire\"",
+			"{\"id\":\"rpb-ignore-blows\", \"value\":\"3+\"}",
+			"{\"id\":\"rpb-ignore-blows\", \"value\":\"4+\"}",
+			"{\"id\":\"rpb-ignore-blows\", \"value\":\"6+\"}",
+			"{\"id\":\"rpb-ignore-blows\", \"value\":\"5+\"}",
+			"\"rpb-drain-power\"",
+			"\"rpb-large-monster\"",
+			"{\"id\":\"rpb-tattoos\", \"value\":\"5+\"}",
+			"{\"id\":\"rpb-tattoos\", \"value\":\"6+\"}",
+			"\"rpb-fight-in-ranks\"",
+			"{\"id\":\"rpb-dodge\", \"value\":\"6+\"}",
+			"{\"id\":\"rpb-dodge\", \"value\":\"5+\"}",
+			"{\"id\":\"rpb-dodge\", \"value\":\"4+\"}",
+			"{\"id\":\"rpb-dodge\", \"value\":\"3+\"}",
+			"-cdata-section",
+			"{\"id\":\"rpb-magic-resistance\", \"value\":\"3+\"}",
+			"{\"id\":\"rpb-magic-resistance\", \"value\":\"4+\"}",
+			"{\"id\":\"rpb-magic-resistance\", \"value\":\"6+\"}",
+			"{\"id\":\"rpb-magic-resistance\", \"value\":\"5+\"}",
+			"{\"id\":\"rpb-regenerate\", \"value\":\"2\"}",
+			"{\"id\":\"rpb-regenerate\", \"value\":\"1\"}",
+			"{\"id\":\"rpb-terror\", \"value\":\"9\"}",
+			"{\"id\":\"rpb-terror\", \"value\":\"10\"}",
+			"{\"id\":\"rpb-terror\", \"value\":\"11\"}",
+			"{\"id\":\"rpb-terror\", \"value\":\"12\"}",
+			"{\"id\":\"rpb-terror\", \"value\":\"13\"}",
+			"{\"id\":\"rpb-terror\", \"value\":\"14\"}",
+			"{\"id\":\"rpb-ambush-magic\", \"value\":\"5+\"}",
+			"{\"id\":\"rpb-ambush-magic\", \"value\":\"A\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"6+\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"10+\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"7+\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"12\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"4+\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"5+\"}",
+			"{\"id\":\"rpb-ignore-pain\", \"value\":\"6+\"}",
+			"{\"id\":\"rpb-magic-dispel\", \"value\":\"6+\"}",
+			"{\"id\":\"rpb-magic-dispel\", \"value\":\"5+\"}",
+			"{\"id\":\"rpb-magic-dispel\", \"value\":\"4+\"}",
+			"\"rpb-fly\"",
+			"{\"id\":\"rpb-fear\", \"value\":12}",
+			"{\"id\":\"rpb-fear\", \"value\":11}",
+			"{\"id\":\"rpb-fear\", \"value\":10}",
+			"{\"id\":\"rpb-fear\", \"value\":9}",
+			"{\"id\":\"rpb-fear\", \"value\":8}",
+			"{\"id\":\"rpb-fear\", \"value\":7}",
+			"{\"id\":\"rpb-fear\", \"value\":6}",
+			"{\"id\":\"rpb-fear\", \"value\":5}",
+			"{\"id\":\"rpb-fear\", \"value\":4}",
+			"{\"id\":\"rpb-fear\", \"value\":3}",
+			"{\"id\":\"rpb-fear\", \"value\":2}",
+			"{\"id\":\"rpb-fear\", \"value\":1}",
+			"{\"id\":\"rpb-fear\", \"value\":5}",
+			"{\"id\":\"rpb-fear\", \"value\":6}",
+			"{\"id\":\"rpb-fear\", \"value\":5}",
+			"rpb-break",
+			"rpb-never-pinned",
+			"rpb-magic-armour"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 120.0
+	},
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"untitled"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 245.0,
+	"status_bar_visible": true
+}

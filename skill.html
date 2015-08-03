@@ -1,0 +1,12 @@
+<li class="skill">
+	<span class="skillName">{{attr.nome}}</span>	
+    <div class="skillValue">		 
+        <rating></rating>
+    </div>
+    <ul ng-show="attr.specialization">
+    	<li class="spec" ng-repeat="obj in attr.specialization">			
+			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><span>{{obj.nome}}</span>
+    	</li>   	
+    </ul>
+</li>
+

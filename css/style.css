@@ -1,0 +1,154 @@
+/* typography */
+
+@font-face {
+  font-family: "Essays 1743";
+  src: url("../fonts/Essays1743.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-weight: bold;
+  src: url("../fonts/Essays1743-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-style: italic;
+  src: url("../fonts/Essays1743-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Essays 1743";
+  font-style: italic;
+  font-weight: bold;
+  src: url("../fonts/Essays1743-bold-italic.ttf") format("truetype");
+}
+
+/*
+@font-face {
+  font-family: "Alphabet of Children";
+  src: url("fonts/Alphabet-of-Children.eot?") format("eot"), url("fonts/Alphabet-of-Children.woff") format("woff"), url("fonts/Alphabet-of-Children.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  src: url("fonts/Libertine.eot?") format("eot"), url("fonts/Libertine.woff") format("woff"), url("fonts/Libertine.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-weight: bold;
+  src: url("fonts/Libertine-bold.eot?") format("eot"), url("fonts/Libertine-bold.woff") format("woff"), url("fonts/Libertine-bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  src: url("fonts/Libertine-italic.eot?") format("eot"), url("fonts/Libertine-italic.woff") format("woff"), url("fonts/Libertine-italic.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Libertine";
+  font-style: italic;
+  font-weight: bold;
+  src: url("fonts/Libertine-bold-italic.eot?") format("eot"), url("fonts/Libertine-bold-italic.woff") format("woff"), url("fonts/Libertine-bold-italic.ttf") format("truetype");
+}
+*/
+
+
+
+
+body {
+  font-size: 13px;
+  font: large/1.556 "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+  word-spacing: 0.1em;  
+  background: #fff url(../images/bg2.png) center;
+  text-align: justify;
+  -webkit-font-smoothing: antialiased;
+  padding-top: 70px
+}
+
+ul { margin: 1em; padding: 0;}
+ul li{ list-style: none;}
+h1, h2, h3, h4{
+	font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
+	font-weight: normal;
+	text-shadow: 0 0 1px #667;
+}
+
+/* skillbox */
+.skill{ clear: both; overflow: hidden; white-space: nowrap; background: url(../images/dot.png) 0px 0.8em repeat-x;}
+.skillName{ float: left; background-color: #fff;}
+.skillValue{ float: right; background-color: #fff; margin-top: 4px; padding-right: 1px; display: inline-block; display: -webkit-inline-box;}
+.infoValue{ float: right; background-color: #fff; text-align: right;}
+
+.rotatedFloralHeartBullet {
+	font-size: xx-large;
+	line-height: .875;
+	text-shadow: 0 0 2px #667;
+}
+.rotatedFloralHeartBullet:after {
+	content: "\2026";
+}
+
+.customChb input{
+  display: none;
+}
+.customChb {
+  width: 16px;
+  height: 16px;  
+  background: #ddd;
+  border-radius: 100%;
+  position: relative;
+  -webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  float: left;
+}
+
+.customChb label {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 100px;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  background: white;
+
+  -webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+  -moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+  box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.customChb input[type=checkbox]:checked + label {
+  background: #000;
+}
+
+.longList{
+  display: inline-block;
+  display: -webkit-inline-box;
+}
+.spec{ clear: both; padding: 0; font-weight: 12px; font-style: italic;}
+
+
+
+/* STAR RATING */
+.rating {
+    color: #a9a9a9;
+    margin: 0;
+    padding: 0;
+}
+ul.rating {
+    display: inline-block;
+}
+.rating li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 1px;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+.rating .filled {
+    color: red;
+}
