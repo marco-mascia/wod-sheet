@@ -1,0 +1,82 @@
+<div ng-controller="creatorCtrl">                   
+
+    <input class="text-center name" ng-model="currPg.identita.nome" placeholder="Nome">
+    <input class="text-center concetto" ng-model="currPg.identita.concetto" placeholder="Concetto">
+    <input class="text-center giocatore" ng-model="currPg.identita.giocatore" placeholder="Giocatore">
+
+    <p class="text-center rotatedFloralHeartBullet"></p>
+    <H3 class="text-center text-uppercase">Attributi</H3>                  
+    <div class="row attributes">                
+        <div class="col-sm-4 col-md-4 mental">
+            <ul>                                          
+               <li><input ng-model="currPg.attributi.mentali.int.value" placeholder="Intelligenza"></li>
+               <li><input ng-model="currPg.attributi.mentali.pro.value" placeholder="Prontezza"></li>
+               <li><input ng-model="currPg.attributi.mentali.fer.value" placeholder="Fermezza"></li>
+            </ul>
+        </div>                
+        <div class="col-sm-4 col-md-4 phisical">                           
+           <ul>                                          
+               <li><input ng-model="currPg.attributi.fisiche.for.value" placeholder="Forza"></li>
+               <li><input ng-model="currPg.attributi.fisiche.des.value" placeholder="Destrezza"></li>
+               <li><input ng-model="currPg.attributi.fisiche.cos.value" placeholder="Costituzione"></li>
+           </ul>                                     
+        </div>  
+        <div class="col-sm-4 col-md-4 social">
+            <ul>                                          
+               <li><input ng-model="currPg.attributi.sociali.pre.value" placeholder="Presenza"></li>
+               <li><input ng-model="currPg.attributi.sociali.asc.value" placeholder="Ascendente"></li>
+               <li><input ng-model="currPg.attributi.sociali.aut.value" placeholder="Autocontrollo"></li>
+           </ul>
+        </div>                
+    </div> 
+
+     <div class="row">                  
+        <p class="text-center rotatedFloralHeartBullet"></p>    
+        
+        <div class="col-sm-4 col-md-4 abilities">
+            <H4 class="text-center text-uppercase mental">Abilità Mentali</H4>
+       		
+       		<div class="row">               		
+				<div class="col-sm-6">
+       				<select ng-options="item as item.label for item in abMentali track by item.abId" ng-model="skill" class="form-control input-md"></select>
+       			</div>
+       			<div class="col-sm-6">
+       				<div class="input-group">                  				 
+       				  	 <input type="text" class="form-control" placeholder="Val" ng-model="skill.value">
+					     <span class="input-group-btn">
+					     	<button type="button" class="btn btn-default" ng-click="addSkill('mentali')">add</button>			               					  	
+					     </span>						      
+				    </div>
+       			</div>	       			
+       		</div>
+
+            <H4 class="text-center text-uppercase phisical">Abilità Fisiche</h4>
+            <ul ng-repeat="attr in currPg.elencoabilita.fisiche">
+               <skill></skill>
+            </ul>
+            <H4 class="text-center text-uppercase social">Abilità Sociali</H4>
+            <ul ng-repeat="attr in currPg.elencoabilita.sociali">
+               <skill></skill>
+            </ul>
+        </div>                
+
+        <!--
+        <div class="col-sm-4 col-md-4">
+            <H4 class="text-center text-uppercase merits">Talenti</H4>
+            
+            <H4 class="text-center text-uppercase extrainfo"></H4>               
+            <ul ng-repeat="attr in currPg.talenti">
+               <skill></skill>
+            </ul>
+        </div>          
+    	-->
+               
+
+    </div> 
+
+    <div class="btn-group" role="group">
+    	<button type="button" class="btn btn-default" ng-click="addPg()">Add Pg</button>
+    	<button type="button" class="btn btn-default" ng-click="editor()">Switch to Editor</button>  
+    </div>
+
+</div>  
