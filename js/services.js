@@ -25,14 +25,14 @@ angular.module('services', [])
 .factory('abMentali', function(){
 
   var ab = [
-            {'abId':'', 'label':'Accademiche'},
-            {'abId':'', 'label':'Informatica'},
-            {'abId':'', 'label':'Investigare'},
-            {'abId':'', 'label':'Manualita'},
-            {'abId':'', 'label':'Medicina'},
-            {'abId':'', 'label':'Occulto'},
-            {'abId':'', 'label':'Politica'},
-            {'abId':'', 'label':'Scienze'}
+            {'abId':'', 'label':'Accademiche', 'type': 'men'},
+            {'abId':'', 'label':'Informatica', 'type': 'men'},
+            {'abId':'', 'label':'Investigare', 'type': 'men'},
+            {'abId':'', 'label':'Manualita', 'type': 'men'},
+            {'abId':'', 'label':'Medicina', 'type': 'men'},
+            {'abId':'', 'label':'Occulto', 'type': 'men'},
+            {'abId':'', 'label':'Politica', 'type': 'men'},
+            {'abId':'', 'label':'Scienze', 'type': 'men'}
           ];
   
   var list = {};
@@ -47,14 +47,14 @@ angular.module('services', [])
 .factory('abFisiche', function(){
   
   var ab = [
-            {'abId':'', 'label':'Armi da Fuoco'},
-            {'abId':'', 'label':'Armi da Mischia'},
-            {'abId':'', 'label':'Atletica'},
-            {'abId':'', 'label':'Criminalità'},
-            {'abId':'', 'label':'Furtività'},
-            {'abId':'', 'label':'Guidare'},
-            {'abId':'', 'label':'Lotta'},
-            {'abId':'', 'label':'Sopravvivenza'}
+            {'abId':'', 'label':'Armi da Fuoco', 'type': 'fis'},
+            {'abId':'', 'label':'Armi da Mischia', 'type': 'fis'},
+            {'abId':'', 'label':'Atletica', 'type': 'fis'},
+            {'abId':'', 'label':'Criminalità', 'type': 'fis'},
+            {'abId':'', 'label':'Furtività', 'type': 'fis'},
+            {'abId':'', 'label':'Guidare', 'type': 'fis'},
+            {'abId':'', 'label':'Lotta', 'type': 'fis'},
+            {'abId':'', 'label':'Sopravvivenza', 'type': 'fis'}
           ];
   
   var list = {};
@@ -70,14 +70,14 @@ angular.module('services', [])
 .factory('abSociali', function(){
   
   var ab = [
-            {'abId':'', 'label':'Affinità Animale'},
-            {'abId':'', 'label':'Bassifondi'},
-            {'abId':'', 'label':'Empatia'},
-            {'abId':'', 'label':'Espressività'},
-            {'abId':'', 'label':'Intimidire'},
-            {'abId':'', 'label':'Persuasione'},
-            {'abId':'', 'label':'Socializzare'},
-            {'abId':'', 'label':'Sotterfugio'}
+            {'abId':'', 'label':'Affinità Animale', 'type': 'soc'},
+            {'abId':'', 'label':'Bassifondi', 'type': 'soc'},
+            {'abId':'', 'label':'Empatia', 'type': 'soc'},
+            {'abId':'', 'label':'Espressività', 'type': 'soc'},
+            {'abId':'', 'label':'Intimidire', 'type': 'soc'},
+            {'abId':'', 'label':'Persuasione', 'type': 'soc'},
+            {'abId':'', 'label':'Socializzare', 'type': 'soc'},
+            {'abId':'', 'label':'Sotterfugio', 'type': 'soc'}
           ];
   
   var list = {};

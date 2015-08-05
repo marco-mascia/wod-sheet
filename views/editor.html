@@ -1,4 +1,4 @@
-<div ng-controller="creatorCtrl">                   
+                
 
     <input class="text-center name" ng-model="currPg.identita.nome" placeholder="Nome">
     <input class="text-center concetto" ng-model="currPg.identita.concetto" placeholder="Concetto">
@@ -9,23 +9,23 @@
     <div class="row attributes">                
         <div class="col-sm-4 col-md-4 mental">
             <ul>                                          
-               <li><input ng-model="currPg.attributi.mentali.int.value" placeholder="Intelligenza"></li>
-               <li><input ng-model="currPg.attributi.mentali.pro.value" placeholder="Prontezza"></li>
-               <li><input ng-model="currPg.attributi.mentali.fer.value" placeholder="Fermezza"></li>
+               <li><input ng-model="currPg.attributi.men.int.value" placeholder="Intelligenza"></li>
+               <li><input ng-model="currPg.attributi.men.pro.value" placeholder="Prontezza"></li>
+               <li><input ng-model="currPg.attributi.men.fer.value" placeholder="Fermezza"></li>
             </ul>
         </div>                
         <div class="col-sm-4 col-md-4 phisical">                           
            <ul>                                          
-               <li><input ng-model="currPg.attributi.fisiche.for.value" placeholder="Forza"></li>
-               <li><input ng-model="currPg.attributi.fisiche.des.value" placeholder="Destrezza"></li>
-               <li><input ng-model="currPg.attributi.fisiche.cos.value" placeholder="Costituzione"></li>
+               <li><input ng-model="currPg.attributi.fis.for.value" placeholder="Forza"></li>
+               <li><input ng-model="currPg.attributi.fis.des.value" placeholder="Destrezza"></li>
+               <li><input ng-model="currPg.attributi.fis.cos.value" placeholder="Costituzione"></li>
            </ul>                                     
         </div>  
         <div class="col-sm-4 col-md-4 social">
             <ul>                                          
-               <li><input ng-model="currPg.attributi.sociali.pre.value" placeholder="Presenza"></li>
-               <li><input ng-model="currPg.attributi.sociali.asc.value" placeholder="Ascendente"></li>
-               <li><input ng-model="currPg.attributi.sociali.aut.value" placeholder="Autocontrollo"></li>
+               <li><input ng-model="currPg.attributi.soc.pre.value" placeholder="Presenza"></li>
+               <li><input ng-model="currPg.attributi.soc.asc.value" placeholder="Ascendente"></li>
+               <li><input ng-model="currPg.attributi.soc.aut.value" placeholder="Autocontrollo"></li>
            </ul>
         </div>                
     </div> 
@@ -36,6 +36,12 @@
         <div class="col-sm-4 col-md-4 abilities">
             <H4 class="text-center text-uppercase mental">Abilità Mentali</H4>
        		
+
+          	<attribute items="abMentali"></attribute>
+          	<attribute items="abFisiche"></attribute>
+          	<attribute items="abSociali"></attribute>
+
+          	<!--
        		<div class="row">               		
 				<div class="col-sm-6">
        				<select ng-options="item as item.label for item in abMentali track by item.abId" ng-model="skill" class="form-control input-md"></select>
@@ -44,21 +50,44 @@
        				<div class="input-group">                  				 
        				  	 <input type="text" class="form-control" placeholder="Val" ng-model="skill.value">
 					     <span class="input-group-btn">
-					     	<button type="button" class="btn btn-default" ng-click="addSkill('mentali')">add</button>			               					  	
+					     	<button type="button" class="btn btn-default" ng-click="addSkill()">add</button>			               					  	
 					     </span>						      
 				    </div>
        			</div>	       			
        		</div>
 
             <H4 class="text-center text-uppercase phisical">Abilità Fisiche</h4>
-            <ul ng-repeat="attr in currPg.elencoabilita.fisiche">
-               <skill></skill>
-            </ul>
+            <div class="row">               		
+				<div class="col-sm-6">
+       				<select ng-options="item as item.label for item in abFisiche track by item.abId" ng-model="skill" class="form-control input-md"></select>
+       			</div>
+       			<div class="col-sm-6">
+       				<div class="input-group">                  				 
+       				  	 <input type="text" class="form-control" placeholder="Val" ng-model="skill.value">
+					     <span class="input-group-btn">
+					     	<button type="button" class="btn btn-default" ng-click="addSkill()">add</button>			               					  	
+					     </span>						      
+				    </div>
+       			</div>	       			
+       		</div>
+
+
             <H4 class="text-center text-uppercase social">Abilità Sociali</H4>
-            <ul ng-repeat="attr in currPg.elencoabilita.sociali">
-               <skill></skill>
-            </ul>
-        </div>                
+            <div class="row">               		
+				<div class="col-sm-6">
+       				<select ng-options="item as item.label for item in abSociali track by item.abId" ng-model="skill" class="form-control input-md"></select>
+       			</div>
+       			<div class="col-sm-6">
+       				<div class="input-group">                  				 
+       				  	 <input type="text" class="form-control" placeholder="Val" ng-model="skill.value">
+					     <span class="input-group-btn">
+					     	<button type="button" class="btn btn-default" ng-click="addSkill()">add</button>			               					  	
+					     </span>						      
+				    </div>
+       			</div>	       			
+       		</div>
+        </div>  
+        -->              
 
         <!--
         <div class="col-sm-4 col-md-4">
@@ -79,4 +108,3 @@
     	<button type="button" class="btn btn-default" ng-click="editor()">Switch to Editor</button>  
     </div>
 
-</div>  

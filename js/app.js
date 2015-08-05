@@ -11,15 +11,12 @@
             })                      
             .when('/editor', {
                 templateUrl : 'views/editor.html',
-                controller  : 'editorController'
-            });
-            /*
-            // route for the contact page
-            .when('/contact', {
-                templateUrl : 'views/contact.html',
-                controller  : 'contactController'
-            });
-			*/
+                controller  : 'editorCtrl'
+            })
+            .when('/workshop', {
+                templateUrl : 'views/workshop.html',
+                controller  : 'workshopCtrl'
+            });          
     })
 
 	.directive('skill', function(){
@@ -47,15 +44,27 @@
 		};
 	})
 
-	.directive('editor', function(){
+	.directive('attribute', function(){
 		return{
-			restrict: 'E',			
+			restrict: 'E',
+			scope: {				
+				items: "="
+			},			
 			templateUrl: function(elem, attr){				
-				return 'views/editor.html';	
-			}	
+				return 'attribute.html';	
+			},		
+			controller: function(){
+			
+			},
+			link: function(scope, element, attrs){
+            
+        	}
 		};
 	})
 
+
+
+	
 
 	
 })();

@@ -6,6 +6,10 @@
         <rating></rating>
     </div>
     
+    <div class="" ng-show="isCreator">
+        <input type="text" value="{{attr.valore}}" placeholder="value">
+    </div>
+    
     <ul ng-show="attr.specialization">
     	<li class="spec" ng-repeat="obj in attr.specialization">			
 			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><span>{{obj.nome}}</span>

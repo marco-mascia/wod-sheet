@@ -1,12 +1,5 @@
 angular.module('controllers', [])
 
-/*
-.controller('PgController', function($scope, $firebaseArray){
-	var ref = new Firebase("https://wod.firebaseio.com/pgList");
-	$scope.pgList = $firebaseArray(ref);
-})
-*/
-
 .controller('mainController', function($scope){
 
 })
@@ -15,8 +8,8 @@ angular.module('controllers', [])
 
 })
 
-.controller('editorController', function($scope) {
-
+.controller('workshopCtrl', function($scope) {	 
+	$scope.tArray = [{name:'Sim', value:'1'},{name:'Sala', value:'2'},{name:'Bim', value:'3'}];
 })
 
 .controller('PgController', function($scope, $firebaseArray){
@@ -47,12 +40,14 @@ angular.module('controllers', [])
 	};
 })
 
-.controller('creatorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali){
+.controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali, abFisiche, abSociali){
 
 	var ref = new Firebase("https://wod.firebaseio.com/pgList");	
 	$scope.pgList = $firebaseArray(ref);		
 	$scope.abMentali = abMentali.getAll();	
-	$scope.currPg = {'elencoabilita':[], 'identita':{}};
+	$scope.abFisiche = abFisiche.getAll();	
+	$scope.abSociali = abSociali.getAll();	
+	$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[]};
 
 	$scope.addSkill = function(type){				
 		console.log('add skill: ', $scope.skill);
@@ -71,17 +66,17 @@ angular.module('controllers', [])
 	$scope.addPg = function(){	
 
 		console.log('add current pg!');
-		$scope.currPg.attributi.mentali.int.label="Intelligenza";
-		$scope.currPg.attributi.mentali.pro.label="Prontezza";
-		$scope.currPg.attributi.mentali.fer.label="Fermezza";
+		$scope.currPg.attributi.men.int.label="Intelligenza";
+		$scope.currPg.attributi.men.pro.label="Prontezza";
+		$scope.currPg.attributi.men.fer.label="Fermezza";
 
-		$scope.currPg.attributi.fisiche.for.label="Forza";
-		$scope.currPg.attributi.fisiche.des.label="Destrezza";
-		$scope.currPg.attributi.fisiche.cos.label="Costituzione";
+		$scope.currPg.attributi.fis.for.label="Forza";
+		$scope.currPg.attributi.fis.des.label="Destrezza";
+		$scope.currPg.attributi.fis.cos.label="Costituzione";
 
-		$scope.currPg.attributi.sociali.pre.label="Presenza";
-		$scope.currPg.attributi.sociali.asc.label="Ascendente";
-		$scope.currPg.attributi.sociali.aut.label="Autocontrollo";
+		$scope.currPg.attributi.soc.pre.label="Presenza";
+		$scope.currPg.attributi.soc.asc.label="Ascendente";
+		$scope.currPg.attributi.soc.aut.label="Autocontrollo";
 
 		$scope.pgList.$add($scope.currPg);
 	};

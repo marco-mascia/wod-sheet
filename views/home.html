@@ -16,17 +16,17 @@
 
 	<div class="row attributes" ng-show="currPg">                
 	    <div class="col-sm-4 col-md-4 mental">
-	        <ul ng-repeat="attr in currPg.attributi.mentali">                                          
+	        <ul ng-repeat="attr in currPg.attributi | filter: { type: 'men' }">                                          
 	            <skill></skill>
 	        </ul>
 	    </div>                
 	    <div class="col-sm-4 col-md-4 phisical">
-	        <ul ng-repeat="attr in currPg.attributi.fisiche">
+	        <ul ng-repeat="attr in currPg.attributi | filter: { type: 'fis' }">
 	            <skill></skill>
 	        </ul>                
 	    </div>  
 	    <div class="col-sm-4 col-md-4 social">
-	        <ul ng-repeat="attr in currPg.attributi.sociali">
+	        <ul ng-repeat="attr in currPg.attributi | filter: { type: 'soc' }">
 	           <skill></skill>
 	        </ul> 
 	    </div>                
@@ -38,15 +38,15 @@
 	    
 	    <div class="col-sm-4 col-md-4 abilities">
 	        <H4 class="text-center text-uppercase mental">Abilità Mentali</H4>
-	        <ul ng-repeat="attr in currPg.elencoabilita.mentali">
+	        <ul ng-repeat="attr in currPg.elencoabilita | filter: { type: 'men' }">
 	           <skill></skill>
 	        </ul>
 	        <H4 class="text-center text-uppercase phisical">Abilità Fisiche</h4>
-	        <ul ng-repeat="attr in currPg.elencoabilita.fisiche">
+	        <ul ng-repeat="attr in currPg.elencoabilita | filter: { type: 'fis' }">
 	           <skill></skill>
 	        </ul>
 	        <H4 class="text-center text-uppercase social">Abilità Sociali</H4>
-	        <ul ng-repeat="attr in currPg.elencoabilita.sociali">
+	        <ul ng-repeat="attr in currPg.elencoabilita | filter: { type: 'soc' }">
 	           <skill></skill>
 	        </ul>
 	    </div>                

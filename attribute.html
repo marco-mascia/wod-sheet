@@ -1,0 +1,5 @@
+<li>
+	<select ng-options="item as item.label for item in items track by item.abId" ng-model="obj" class="form-control input-md"></select>
+	<input ng-model="item.value">
+	<button type="button" class="btn btn-default" ng-click="addAttribute()">add</button>
+</li>
