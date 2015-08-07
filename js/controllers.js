@@ -21,6 +21,7 @@ angular.module('controllers', [])
 		$scope.pgList.$add($scope.currPg);
 	};
 
+
 	$scope.updateSalute = function() {
 	  var pgRef = ref.child($scope.currPg.$id + '/identita');	  
 	  pgRef.update({
@@ -36,7 +37,7 @@ angular.module('controllers', [])
 
 	$scope.editor = function(){
 		console.log('isEditor true');		
-		($scope.isCreator ? $scope.isCreator=false : $scope.isCreator=true);
+		($scope.isEditor ? $scope.isEditor=false : $scope.isEditor=true);
 	};
 })
 
@@ -48,19 +49,22 @@ angular.module('controllers', [])
 	$scope.abFisiche = abFisiche.getAll();	
 	$scope.abSociali = abSociali.getAll();	
 	$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[]};
+	$scope.isEditor = true;
 
-	$scope.addSkill = function(type){				
-		console.log('add skill: ', $scope.skill);
-		console.log('$scope.currPg: ', $scope.currPg);
-		console.log('type ', type);
-
-		/*
-		if($scope.currPg.elencoabilita === undefined){
-			$scope.currPg.elencoabilita = [];
-		}
-		*/
-		$scope.currPg.elencoabilita.push($scope.skill);
-		
+	$scope.addSkill = function(skill){				
+		console.log('add skill ', skill);
+		var index = $scope.currPg.elencoabilita.indexOf(skill);
+		if (index == -1) {
+			$scope.currPg.elencoabilita.push(skill);			
+		}		
+	};
+	
+	$scope.removeSkill = function(skill){
+		console.log('remove skill ', skill);		
+		var index = $scope.currPg.elencoabilita.indexOf(skill);
+		if (index > -1) {
+    		$scope.currPg.elencoabilita.splice(index, 1);
+		}		
 	};
 
 	$scope.addPg = function(){	

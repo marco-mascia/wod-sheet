@@ -62,7 +62,7 @@ body {
 }
 
 ul { margin: 1em; padding: 0;}
-ul li{ list-style: none;}
+ul li, .col-sm-4{ list-style: none;}
 h1, h2, h3, h4{
 	font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
 	font-weight: normal;
@@ -72,7 +72,7 @@ h1, h2, h3, h4{
 /* skillbox */
 .skill{ clear: both; overflow: hidden; white-space: nowrap; background: url(../images/dot.png) 0px 0.8em repeat-x;}
 .skillName{ float: left; background-color: #fff;}
-.skillValue{ float: right; background-color: #fff; margin-top: 4px; padding-right: 1px; display: inline-block; display: -webkit-inline-box;}
+.skillValue{ background-color: #fff; margin-top: 4px; padding-right: 1px; display: inline-block; display: -webkit-inline-box;}
 .infoValue{ float: right; background-color: #fff; text-align: right;}
 
 .rotatedFloralHeartBullet {

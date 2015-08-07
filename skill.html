@@ -1,15 +1,14 @@
 <li class="skill">
-	<span class="skillName" ng-show="!isCreator">{{attr.nome}}</span>	
-	<input class="skillName" ng-model="attr.nome" ng-show="isCreator">
+	<span class="skillName">{{item.label}}</span>	
 
-    <div class="skillValue">		 
+    <button type="button" class="btn btn-md pull-right" aria-label="Left Align" ng-click="removeSkill(item)" data-dismiss="alert" ng-show="isEditor">
+        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+    </button> 
+
+    <div class="skillValue pull-right">		 
         <rating></rating>
-    </div>
-    
-    <div class="" ng-show="isCreator">
-        <input type="text" value="{{attr.valore}}" placeholder="value">
-    </div>
-    
+    </div> 
+
     <ul ng-show="attr.specialization">
     	<li class="spec" ng-repeat="obj in attr.specialization">			
 			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><span>{{obj.nome}}</span>

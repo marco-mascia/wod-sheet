@@ -25,14 +25,14 @@ angular.module('services', [])
 .factory('abMentali', function(){
 
   var ab = [
-            {'abId':'', 'label':'Accademiche', 'type': 'men'},
-            {'abId':'', 'label':'Informatica', 'type': 'men'},
-            {'abId':'', 'label':'Investigare', 'type': 'men'},
-            {'abId':'', 'label':'Manualita', 'type': 'men'},
-            {'abId':'', 'label':'Medicina', 'type': 'men'},
-            {'abId':'', 'label':'Occulto', 'type': 'men'},
-            {'abId':'', 'label':'Politica', 'type': 'men'},
-            {'abId':'', 'label':'Scienze', 'type': 'men'}
+            {'abId':'m1', 'label':'Accademiche', 'type': 'men'},
+            {'abId':'m2', 'label':'Informatica', 'type': 'men'},
+            {'abId':'m3', 'label':'Investigare', 'type': 'men'},
+            {'abId':'m4', 'label':'Manualita', 'type': 'men'},
+            {'abId':'m5', 'label':'Medicina', 'type': 'men'},
+            {'abId':'m6', 'label':'Occulto', 'type': 'men'},
+            {'abId':'m7', 'label':'Politica', 'type': 'men'},
+            {'abId':'m8', 'label':'Scienze', 'type': 'men'}
           ];
   
   var list = {};
@@ -47,14 +47,14 @@ angular.module('services', [])
 .factory('abFisiche', function(){
   
   var ab = [
-            {'abId':'', 'label':'Armi da Fuoco', 'type': 'fis'},
-            {'abId':'', 'label':'Armi da Mischia', 'type': 'fis'},
-            {'abId':'', 'label':'Atletica', 'type': 'fis'},
-            {'abId':'', 'label':'Criminalità', 'type': 'fis'},
-            {'abId':'', 'label':'Furtività', 'type': 'fis'},
-            {'abId':'', 'label':'Guidare', 'type': 'fis'},
-            {'abId':'', 'label':'Lotta', 'type': 'fis'},
-            {'abId':'', 'label':'Sopravvivenza', 'type': 'fis'}
+            {'abId':'f1', 'label':'Armi da Fuoco', 'type': 'fis'},
+            {'abId':'f2', 'label':'Armi da Mischia', 'type': 'fis'},
+            {'abId':'f3', 'label':'Atletica', 'type': 'fis'},
+            {'abId':'f4', 'label':'Criminalità', 'type': 'fis'},
+            {'abId':'f5', 'label':'Furtività', 'type': 'fis'},
+            {'abId':'f6', 'label':'Guidare', 'type': 'fis'},
+            {'abId':'f7', 'label':'Lotta', 'type': 'fis'},
+            {'abId':'f8', 'label':'Sopravvivenza', 'type': 'fis'}
           ];
   
   var list = {};
@@ -70,14 +70,14 @@ angular.module('services', [])
 .factory('abSociali', function(){
   
   var ab = [
-            {'abId':'', 'label':'Affinità Animale', 'type': 'soc'},
-            {'abId':'', 'label':'Bassifondi', 'type': 'soc'},
-            {'abId':'', 'label':'Empatia', 'type': 'soc'},
-            {'abId':'', 'label':'Espressività', 'type': 'soc'},
-            {'abId':'', 'label':'Intimidire', 'type': 'soc'},
-            {'abId':'', 'label':'Persuasione', 'type': 'soc'},
-            {'abId':'', 'label':'Socializzare', 'type': 'soc'},
-            {'abId':'', 'label':'Sotterfugio', 'type': 'soc'}
+            {'abId':'s1', 'label':'Affinità Animale', 'type': 'soc'},
+            {'abId':'s2', 'label':'Bassifondi', 'type': 'soc'},
+            {'abId':'s3', 'label':'Empatia', 'type': 'soc'},
+            {'abId':'s4', 'label':'Espressività', 'type': 'soc'},
+            {'abId':'s5', 'label':'Intimidire', 'type': 'soc'},
+            {'abId':'s6', 'label':'Persuasione', 'type': 'soc'},
+            {'abId':'s7', 'label':'Socializzare', 'type': 'soc'},
+            {'abId':'s8', 'label':'Sotterfugio', 'type': 'soc'}
           ];
   
   var list = {};

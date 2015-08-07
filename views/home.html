@@ -38,22 +38,21 @@
 	    
 	    <div class="col-sm-4 col-md-4 abilities">
 	        <H4 class="text-center text-uppercase mental">Abilità Mentali</H4>
-	        <ul ng-repeat="attr in currPg.elencoabilita | filter: { type: 'men' }">
+	        <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
 	           <skill></skill>
 	        </ul>
 	        <H4 class="text-center text-uppercase phisical">Abilità Fisiche</h4>
-	        <ul ng-repeat="attr in currPg.elencoabilita | filter: { type: 'fis' }">
+	        <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
 	           <skill></skill>
 	        </ul>
 	        <H4 class="text-center text-uppercase social">Abilità Sociali</H4>
-	        <ul ng-repeat="attr in currPg.elencoabilita | filter: { type: 'soc' }">
+	        <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
 	           <skill></skill>
 	        </ul>
 	    </div>                
 
 	    <div class="col-sm-4 col-md-4">
-	        <H4 class="text-center text-uppercase merits">Talenti</H4>
-	        
+	        <H4 class="text-center text-uppercase merits">Talenti</H4>	        
 	        <H4 class="text-center text-uppercase extrainfo"></H4>               
 	        <ul ng-repeat="attr in currPg.talenti">
 	           <skill></skill>

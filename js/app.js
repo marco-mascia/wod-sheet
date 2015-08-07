@@ -48,16 +48,17 @@
 		return{
 			restrict: 'E',
 			scope: {				
-				items: "="
+				items: "=",
+				add: '&'
 			},			
 			templateUrl: function(elem, attr){				
 				return 'attribute.html';	
 			},		
-			controller: function(){
-			
+			controller: function(){							
+				
 			},
 			link: function(scope, element, attrs){
-            
+           		
         	}
 		};
 	})
