@@ -2,7 +2,7 @@
 <div ng-controller="PgController as pgCtrl">
 
 	<div class="form-group">
-		<select ng-options="item as item.identita.nome for item in pgList track by item.charId" ng-model="currPg" class="form-control input-md"></select>          
+		<select ng-options="item as item.identita.nome for item in pgList" ng-model="currPg" class="form-control input-md"></select>          
 	</div>
 
 	<div class="row identity" ng-show="currPg">
@@ -16,17 +16,17 @@
 
 	<div class="row attributes" ng-show="currPg">                
 	    <div class="col-sm-4 col-md-4 mental">
-	        <ul ng-repeat="attr in currPg.attributi | filter: { type: 'men' }">                                          
+	        <ul ng-repeat="item in currPg.attributi | filter: { type: 'men' }">                                          
 	            <skill></skill>
 	        </ul>
 	    </div>                
 	    <div class="col-sm-4 col-md-4 phisical">
-	        <ul ng-repeat="attr in currPg.attributi | filter: { type: 'fis' }">
+	        <ul ng-repeat="item in currPg.attributi | filter: { type: 'fis' }">
 	            <skill></skill>
 	        </ul>                
 	    </div>  
 	    <div class="col-sm-4 col-md-4 social">
-	        <ul ng-repeat="attr in currPg.attributi | filter: { type: 'soc' }">
+	        <ul ng-repeat="item in currPg.attributi | filter: { type: 'soc' }">
 	           <skill></skill>
 	        </ul> 
 	    </div>                

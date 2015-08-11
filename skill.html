@@ -1,14 +1,11 @@
 <li class="skill">
-	<span class="skillName">{{item.label}}</span>	
-
+	<span class="skillName">{{item.label}}</span>
     <button type="button" class="btn btn-md pull-right" aria-label="Left Align" ng-click="removeSkill(item)" data-dismiss="alert" ng-show="isEditor">
         <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
     </button> 
-
     <div class="skillValue pull-right">		 
         <rating></rating>
     </div> 
-
     <ul ng-show="attr.specialization">
     	<li class="spec" ng-repeat="obj in attr.specialization">			
 			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><span>{{obj.nome}}</span>

@@ -75,6 +75,17 @@ angular.module('controllers', [])
 	$scope.addPg = function(){	
 
 		console.log('add current pg!');
+		$scope.currPg.attributi.push({'abId': 'int', 'type':'men', 'label':'Intelligenza', 'value': $scope.currPg.attributi.int.value});
+		$scope.currPg.attributi.push({'abId': 'pro', 'type':'men', 'label':'Prontezza', 'value': $scope.currPg.attributi.pro.value});
+		$scope.currPg.attributi.push({'abId': 'fer', 'type':'men', 'label':'Fermezza', 'value': $scope.currPg.attributi.fer.value});
+		$scope.currPg.attributi.push({'abId': 'for', 'type':'fis', 'label':'Forza', 'value': $scope.currPg.attributi.for.value});
+		$scope.currPg.attributi.push({'abId': 'des', 'type':'fis', 'label':'Destrezza', 'value': $scope.currPg.attributi.des.value});
+		$scope.currPg.attributi.push({'abId': 'cos', 'type':'fis', 'label':'Costituzione', 'value': $scope.currPg.attributi.cos.value});
+		$scope.currPg.attributi.push({'abId': 'pre', 'type':'soc', 'label':'Presenza', 'value': $scope.currPg.attributi.pre.value});
+		$scope.currPg.attributi.push({'abId': 'asc', 'type':'soc', 'label':'Ascendente', 'value': $scope.currPg.attributi.asc.value});
+		$scope.currPg.attributi.push({'abId': 'aut', 'type':'soc', 'label':'Autocontrollo', 'value': $scope.currPg.attributi.aut.value});
+
+		/*
 		$scope.currPg.attributi.men.int.label="Intelligenza";
 		$scope.currPg.attributi.men.pro.label="Prontezza";
 		$scope.currPg.attributi.men.fer.label="Fermezza";
@@ -86,6 +97,8 @@ angular.module('controllers', [])
 		$scope.currPg.attributi.soc.pre.label="Presenza";
 		$scope.currPg.attributi.soc.asc.label="Ascendente";
 		$scope.currPg.attributi.soc.aut.label="Autocontrollo";
+		*/
+		
 
 		$scope.pgList.$add($scope.currPg);
 	};
