@@ -49,7 +49,8 @@
 			restrict: 'E',
 			scope: {				
 				items: "=",
-				add: '&'
+				add: '&',
+				addsp: '&'
 			},			
 			templateUrl: function(elem, attr){				
 				return 'attribute.html';	

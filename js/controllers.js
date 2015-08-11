@@ -27,10 +27,10 @@ angular.module('controllers', [])
 	};
 
 
-	$scope.updateSalute = function() {
+	$scope.updateHealth = function() {
 	  var pgRef = ref.child($scope.currPg.$id + '/identita');	  
 	  pgRef.update({
-  			"salute": $scope.currPg.identita.salute
+  			"currhealth": $scope.currPg.identita.currhealth
 	  });
 	};
 
@@ -44,6 +44,14 @@ angular.module('controllers', [])
 		console.log('isEditor true');		
 		($scope.isEditor ? $scope.isEditor=false : $scope.isEditor=true);
 	};
+
+
+	$scope.fixMe = function(){
+		console.log("--- FixMe ---");
+		$scope.currPg.identita.health = $scope.currPg.attributi.cos.value + 5;
+		$scope.currPg.identita.currhealth = $scope.currPg.attributi.cos.value + 5;
+	}
+
 })
 
 .controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali){
@@ -72,9 +80,24 @@ angular.module('controllers', [])
 		}		
 	};
 
+
+	$scope.addSpec = function(currSpec){						
+		console.log('currSpec ', currSpec);				
+		console.log('add spec ', $scope.currSpec);
+		console.log('$scope.obj ', $scope.obj);
+		/*
+		var index = $scope.currPg.elencoabilita.indexOf(skill);
+		if (index == -1) {
+			$scope.currPg.elencoabilita.push(skill);			
+		}
+		*/		
+	};
+
 	$scope.addPg = function(){	
 
 		console.log('add current pg!');
+		$scope.currPg.identita.health = $scope.currPg.attributi.cos.value + 5;
+		$scope.currPg.identita.currhealth = $scope.currPg.attributi.cos.value + 5;
 		$scope.currPg.attributi.push({'abId': 'int', 'type':'men', 'label':'Intelligenza', 'value': $scope.currPg.attributi.int.value});
 		$scope.currPg.attributi.push({'abId': 'pro', 'type':'men', 'label':'Prontezza', 'value': $scope.currPg.attributi.pro.value});
 		$scope.currPg.attributi.push({'abId': 'fer', 'type':'men', 'label':'Fermezza', 'value': $scope.currPg.attributi.fer.value});
@@ -83,25 +106,11 @@ angular.module('controllers', [])
 		$scope.currPg.attributi.push({'abId': 'cos', 'type':'fis', 'label':'Costituzione', 'value': $scope.currPg.attributi.cos.value});
 		$scope.currPg.attributi.push({'abId': 'pre', 'type':'soc', 'label':'Presenza', 'value': $scope.currPg.attributi.pre.value});
 		$scope.currPg.attributi.push({'abId': 'asc', 'type':'soc', 'label':'Ascendente', 'value': $scope.currPg.attributi.asc.value});
-		$scope.currPg.attributi.push({'abId': 'aut', 'type':'soc', 'label':'Autocontrollo', 'value': $scope.currPg.attributi.aut.value});
-
-		/*
-		$scope.currPg.attributi.men.int.label="Intelligenza";
-		$scope.currPg.attributi.men.pro.label="Prontezza";
-		$scope.currPg.attributi.men.fer.label="Fermezza";
-
-		$scope.currPg.attributi.fis.for.label="Forza";
-		$scope.currPg.attributi.fis.des.label="Destrezza";
-		$scope.currPg.attributi.fis.cos.label="Costituzione";
-
-		$scope.currPg.attributi.soc.pre.label="Presenza";
-		$scope.currPg.attributi.soc.asc.label="Ascendente";
-		$scope.currPg.attributi.soc.aut.label="Autocontrollo";
-		*/
-		
+		$scope.currPg.attributi.push({'abId': 'aut', 'type':'soc', 'label':'Autocontrollo', 'value': $scope.currPg.attributi.aut.value});	
 
 		$scope.pgList.$add($scope.currPg);
 	};
+
 })
 
 .controller('EquipController', function($scope, $firebaseArray){

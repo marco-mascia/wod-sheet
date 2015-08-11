@@ -51,6 +51,7 @@
 	        </ul>
 	    </div>                
 
+	    <!--
 	    <div class="col-sm-4 col-md-4">
 	        <H4 class="text-center text-uppercase merits">Talenti</H4>	        
 	        <H4 class="text-center text-uppercase extrainfo"></H4>               
@@ -58,17 +59,20 @@
 	           <skill></skill>
 	        </ul>
 	    </div>      
+		-->
 	    
-	    <H4 class="text-center text-uppercase health col-sm-4 col-md-4">Salute</H4>     
+	    
 	    <div class="healthValue text-center clearfix col-sm-4 col-md-4">
-	       <input ng-model="currPg.identita.salute" ng-change="updateSalute()" type="text"/>                      
-
+	       <H4 class="text-center text-uppercase">Salute</H4>     
+	       <input ng-model="currPg.identita.currhealth" ng-change="updateHealth()" type="text"  style="width: 80px; text-align: right;"/>/{{currPg.identita.currhealth}}
 	    </div>
 
+	    <!--
 	    <H4 class="text-center text-uppercase willpower col-sm-4 col-md-4">Volontà</H4>     
 	    <div class="willpowerValue text-center clearfix col-sm-4 col-md-4">
 	        {{currPg.identita.volonta}}
 	    </div>                    
+		-->
 
 	</div> 
 
@@ -103,7 +107,7 @@
 	          <div class="col-sm-4 col-lg-4">
 	            <div class="form-group">          
 	              <div class="col-md-8">
-	                <input type="text" class="form-control" ng-model="newObj.descr" placeholder="Breve descrizione">
+	                <input type="text" class="form-control" ng-model="newObj.descr" placeholder="Descrizione">
 	              </div>
 	            </div>
 	          </div> 
@@ -119,5 +123,11 @@
 	        </div>
 	    </div>
 	</div>    
+
+	    <div class="btn-group" role="group">
+    	<button type="button" class="btn btn-default" ng-click="addPg()">Add Pg</button>    	
+      <button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>
+      <button type="button" class="btn btn-default" ng-click="fixMe()">FixMe</button>        
+    </div>
 
 </div>

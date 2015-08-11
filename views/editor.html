@@ -39,21 +39,21 @@
 	            <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">                                          
 		            <skill></skill>
 		        </ul>
-	          	<attribute items="abMentali" add="addSkill(skill)"></attribute>
+	          	<attribute items="abMentali" add="addSkill(skill)" addsp="addSpec()"></attribute>
 			</div>			
 			<div class="col-sm-4">
 	          	<H4 class="text-center text-uppercase">Abilità Fisiche</H4>
 	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">                                          
 		            <skill></skill>
 		        </ul>	        
-	          	<attribute items="abFisiche" add="addSkill(skill)"></attribute>
+	          	<attribute items="abFisiche" add="addSkill(skill)" addsp="addSpec()"></attribute>
           	</div>
           	<div class="col-sm-4">
 	          	<H4 class="text-center text-uppercase">Abilità Sociali</H4>
 	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">                                          
 		            <skill></skill>
 		        </ul>
-	          	<attribute items="abSociali" add="addSkill(skill)"></attribute>
+	          	<attribute items="abSociali" add="addSkill(skill)" addsp="addSpec()"></attribute>
         	</div>
     </div>
 
@@ -119,7 +119,8 @@
                 
     <div class="btn-group" role="group">
     	<button type="button" class="btn btn-default" ng-click="addPg()">Add Pg</button>    	
-      <button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>        
+      <button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>
+      <button type="button" class="btn btn-default" ng-click="fixMe()">FixMe</button>        
     </div>
 	
 
