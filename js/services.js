@@ -44,6 +44,28 @@ angular.module('services', [])
   return list;  
 })
 
+.factory('abMentali_apoc', function(){
+
+  var ab = [
+            {'abId':'m1', 'label':'Folklore', 'type': 'men'},
+            {'abId':'m2', 'label':'Erboristeria', 'type': 'men'},
+            {'abId':'m3', 'label':'Investigare', 'type': 'men'},
+            {'abId':'m4', 'label':'Manualita', 'type': 'men'},
+            {'abId':'m5', 'label':'Pronto soccorso', 'type': 'men'},
+            {'abId':'m6', 'label':'Occulto', 'type': 'men'},
+            {'abId':'m7', 'label':'Politica', 'type': 'men'},
+            {'abId':'m8', 'label':'Scienze', 'type': 'men'}
+          ];
+  
+  var list = {};
+      
+  list.getAll = function(){
+    return ab;
+  }
+        
+  return list;  
+})
+
 .factory('abFisiche', function(){
   
   var ab = [
@@ -54,6 +76,30 @@ angular.module('services', [])
             {'abId':'f5', 'label':'Furtività', 'type': 'fis'},
             {'abId':'f6', 'label':'Guidare', 'type': 'fis'},
             {'abId':'f7', 'label':'Lotta', 'type': 'fis'},
+            {'abId':'f8', 'label':'Sopravvivenza', 'type': 'fis'}
+          ];
+  
+  var list = {};
+      
+  list.getAll = function(){
+    return ab;
+  }
+        
+  return list;  
+})
+
+
+.factory('abFisiche_apoc', function(){
+  
+  var ab = [
+            {'abId':'f1', 'label':'Armi da Fuoco', 'type': 'fis'},
+            {'abId':'f2', 'label':'Armi da Mischia', 'type': 'fis'},
+            {'abId':'f3', 'label':'Atletica', 'type': 'fis'},
+            {'abId':'f4', 'label':'Criminalità', 'type': 'fis'},
+            {'abId':'f5', 'label':'Furtività', 'type': 'fis'},
+            {'abId':'f6', 'label':'Guidare', 'type': 'fis'},
+            {'abId':'f6', 'label':'Cavalcare', 'type': 'fis'},
+            {'abId':'f7', 'label':'Armi da Tiro', 'type': 'fis'},
             {'abId':'f8', 'label':'Sopravvivenza', 'type': 'fis'}
           ];
   
@@ -88,5 +134,7 @@ angular.module('services', [])
         
   return list;  
 });
+
+
 
 

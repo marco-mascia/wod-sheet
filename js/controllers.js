@@ -21,6 +21,11 @@ angular.module('controllers', [])
 		$scope.pgList.$add($scope.currPg);
 	};
 
+	$scope.remove = function(){
+		console.log('remove current pg!');
+		$scope.pgList.$remove($scope.currPg);
+	};
+
 
 	$scope.updateSalute = function() {
 	  var pgRef = ref.child($scope.currPg.$id + '/identita');	  
@@ -41,12 +46,12 @@ angular.module('controllers', [])
 	};
 })
 
-.controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali, abFisiche, abSociali){
+.controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali){
 
 	var ref = new Firebase("https://wod.firebaseio.com/pgList");	
 	$scope.pgList = $firebaseArray(ref);		
-	$scope.abMentali = abMentali.getAll();	
-	$scope.abFisiche = abFisiche.getAll();	
+	$scope.abMentali = abMentali_apoc.getAll();	
+	$scope.abFisiche = abFisiche_apoc.getAll();	
 	$scope.abSociali = abSociali.getAll();	
 	$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[]};
 	$scope.isEditor = true;
