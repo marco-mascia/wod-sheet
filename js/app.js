@@ -48,18 +48,41 @@
 		return{
 			restrict: 'E',
 			scope: {				
-				items: "=",
-				add: '&',
-				addsp: '&'
+				items: "=",				
+				pg: "="							
 			},			
 			templateUrl: function(elem, attr){				
 				return 'attribute.html';	
 			},		
-			controller: function(){							
+			controller: function($scope){				
 				
 			},
-			link: function(scope, element, attrs){
-           		
+			link: function(scope, element, attrs){          
+
+				scope.addSkill = function(){
+					/*
+					console.log('add skill ', scope.sk);					
+					console.log('currPg ', scope.pg);
+					console.log('nm ', scope.nm.label);
+					*/
+					var index = scope.pg.elencoabilita.indexOf(scope.sk);
+					if (index == -1) {
+						scope.pg.elencoabilita.push(scope.sk);			
+					}	
+				}
+
+				scope.addSpec = function(){						
+					/*
+					console.log('currSpec ', scope.currSpec);		
+					console.log('sk ', scope.sk);		
+					*/
+
+					if (!scope.sk.specialization){
+						scope.sk.specialization = [];
+					}
+					scope.sk.specialization.push(scope.currSpec)														
+				};
+
         	}
 		};
 	})

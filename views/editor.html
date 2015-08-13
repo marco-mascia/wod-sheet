@@ -36,86 +36,26 @@
      		<p class="text-center rotatedFloralHeartBullet"></p>
         	<div class="col-sm-4">
 	            <H4 class="text-center text-uppercase">Abilità Mentali</H4>
-	            <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">                                          
+	            <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
 		            <skill></skill>
-		        </ul>
-	          	<attribute items="abMentali" add="addSkill(skill)" addsp="addSpec()"></attribute>
+		          </ul>
+	          	<attribute items="abMentali" pg="currPg"></attribute>
 			</div>			
 			<div class="col-sm-4">
 	          	<H4 class="text-center text-uppercase">Abilità Fisiche</H4>
-	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">                                          
+	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
 		            <skill></skill>
 		        </ul>	        
-	          	<attribute items="abFisiche" add="addSkill(skill)" addsp="addSpec()"></attribute>
+	          	<attribute items="abFisiche" pg="currPg"></attribute>
           	</div>
           	<div class="col-sm-4">
 	          	<H4 class="text-center text-uppercase">Abilità Sociali</H4>
-	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">                                          
+	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
 		            <skill></skill>
 		        </ul>
-	          	<attribute items="abSociali" add="addSkill(skill)" addsp="addSpec()"></attribute>
+	          	<attribute items="abSociali" pg="currPg"></attribute>
         	</div>
     </div>
-
-
-          	<!--
-       		<div class="row">               		
-				<div class="col-sm-6">
-       				<select ng-options="item as item.label for item in abMentali track by item.abId" ng-model="skill" class="form-control input-md"></select>
-       			</div>
-       			<div class="col-sm-6">
-       				<div class="input-group">                  				 
-       				  	 <input type="text" class="form-control" placeholder="Val" ng-model="skill.value">
-					     <span class="input-group-btn">
-					     	<button type="button" class="btn btn-default" ng-click="addSkill()">add</button>			               					  	
-					     </span>						      
-				    </div>
-       			</div>	       			
-       		</div>
-
-            <H4 class="text-center text-uppercase phisical">Abilità Fisiche</h4>
-            <div class="row">               		
-				<div class="col-sm-6">
-       				<select ng-options="item as item.label for item in abFisiche track by item.abId" ng-model="skill" class="form-control input-md"></select>
-       			</div>
-       			<div class="col-sm-6">
-       				<div class="input-group">                  				 
-       				  	 <input type="text" class="form-control" placeholder="Val" ng-model="skill.value">
-					     <span class="input-group-btn">
-					     	<button type="button" class="btn btn-default" ng-click="addSkill()">add</button>			               					  	
-					     </span>						      
-				    </div>
-       			</div>	       			
-       		</div>
-
-
-            <H4 class="text-center text-uppercase social">Abilità Sociali</H4>
-            <div class="row">               		
-				<div class="col-sm-6">
-       				<select ng-options="item as item.label for item in abSociali track by item.abId" ng-model="skill" class="form-control input-md"></select>
-       			</div>
-       			<div class="col-sm-6">
-       				<div class="input-group">                  				 
-       				  	 <input type="text" class="form-control" placeholder="Val" ng-model="skill.value">
-					     <span class="input-group-btn">
-					     	<button type="button" class="btn btn-default" ng-click="addSkill()">add</button>			               					  	
-					     </span>						      
-				    </div>
-       			</div>	       			
-       		</div>
-        </div>  
-        -->              
-
-        <!--
-        <div class="col-sm-4 col-md-4">
-            <H4 class="text-center text-uppercase merits">Talenti</H4>
-            
-            <H4 class="text-center text-uppercase extrainfo"></H4>               
-            <ul ng-repeat="attr in currPg.talenti">
-               <skill></skill>
-            </ul>
-        </div>          
-    	-->
                 
     <div class="btn-group" role="group">
     	<button type="button" class="btn btn-default" ng-click="addPg()">Add Pg</button>    	

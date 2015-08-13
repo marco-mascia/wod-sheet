@@ -57,40 +57,25 @@ angular.module('controllers', [])
 .controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali){
 
 	var ref = new Firebase("https://wod.firebaseio.com/pgList");	
-	$scope.pgList = $firebaseArray(ref);		
-	$scope.abMentali = abMentali_apoc.getAll();	
-	$scope.abFisiche = abFisiche_apoc.getAll();	
-	$scope.abSociali = abSociali.getAll();	
-	$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[]};
-	$scope.isEditor = true;
-
-	$scope.addSkill = function(skill){				
-		console.log('add skill ', skill);
-		var index = $scope.currPg.elencoabilita.indexOf(skill);
-		if (index == -1) {
-			$scope.currPg.elencoabilita.push(skill);			
-		}		
+	
+	$scope.init = function () {
+		if (!$scope.currPg) { 			            			        		            
+			$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[]};
+		}
+		$scope.pgList = $firebaseArray(ref);		
+		$scope.abMentali = abMentali_apoc.getAll();	
+		$scope.abFisiche = abFisiche_apoc.getAll();	
+		$scope.abSociali = abSociali.getAll();		
+		$scope.isEditor = true;	
 	};
 	
+
 	$scope.removeSkill = function(skill){
 		console.log('remove skill ', skill);		
 		var index = $scope.currPg.elencoabilita.indexOf(skill);
 		if (index > -1) {
     		$scope.currPg.elencoabilita.splice(index, 1);
 		}		
-	};
-
-
-	$scope.addSpec = function(currSpec){						
-		console.log('currSpec ', currSpec);				
-		console.log('add spec ', $scope.currSpec);
-		console.log('$scope.obj ', $scope.obj);
-		/*
-		var index = $scope.currPg.elencoabilita.indexOf(skill);
-		if (index == -1) {
-			$scope.currPg.elencoabilita.push(skill);			
-		}
-		*/		
 	};
 
 	$scope.addPg = function(){	
@@ -110,6 +95,8 @@ angular.module('controllers', [])
 
 		$scope.pgList.$add($scope.currPg);
 	};
+
+	$scope.init();
 
 })
 
