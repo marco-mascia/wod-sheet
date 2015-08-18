@@ -78,8 +78,7 @@ angular.module('controllers', [])
 		}		
 	};
 
-	$scope.addPg = function(){	
-
+	$scope.addPg = function(){			
 		console.log('add current pg!');
 		$scope.currPg.identita.health = $scope.currPg.attributi.cos.value + 5;
 		$scope.currPg.identita.currhealth = $scope.currPg.attributi.cos.value + 5;

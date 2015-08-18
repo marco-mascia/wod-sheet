@@ -22,7 +22,7 @@
 	.directive('skill', function(){
 		return{
 			restrict: 'E',
-			templateUrl: 'skill.html',
+			templateUrl: 'skill.html',		
 			controller: function(){
 				this.skillValue = 0,
 				this.setSkillValue = function(newValue){
@@ -44,6 +44,26 @@
 		};
 	})
 
+	.directive('specialization', function(){
+		return{
+			restrict: 'E',
+			scope: {
+				sk: '='
+			},	
+			templateUrl: function(elem, attr){				
+				return 'specialization.html';	
+			},			
+			link: function(scope, element, attrs){				
+				scope.addSpec = function(){																															
+					if (!scope.sk.specialization){
+						scope.sk.specialization = [];
+					}
+					scope.sk.specialization.push(scope.currSpec)				
+				};					
+			},
+		}
+	})
+
 	.directive('attribute', function(){
 		return{
 			restrict: 'E',
@@ -58,31 +78,12 @@
 				
 			},
 			link: function(scope, element, attrs){          
-
-				scope.addSkill = function(){
-					/*
-					console.log('add skill ', scope.sk);					
-					console.log('currPg ', scope.pg);
-					console.log('nm ', scope.nm.label);
-					*/
+				scope.addSkill = function(){					
 					var index = scope.pg.elencoabilita.indexOf(scope.sk);
 					if (index == -1) {
 						scope.pg.elencoabilita.push(scope.sk);			
-					}	
-				}
-
-				scope.addSpec = function(){						
-					/*
-					console.log('currSpec ', scope.currSpec);		
-					console.log('sk ', scope.sk);		
-					*/
-
-					if (!scope.sk.specialization){
-						scope.sk.specialization = [];
-					}
-					scope.sk.specialization.push(scope.currSpec)														
-				};
-
+					}						
+				}				
         	}
 		};
 	})

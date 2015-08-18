@@ -45,14 +45,14 @@
 	          	<H4 class="text-center text-uppercase">Abilità Fisiche</H4>
 	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
 		            <skill></skill>
-		        </ul>	        
+		          </ul>	        
 	          	<attribute items="abFisiche" pg="currPg"></attribute>
           	</div>
           	<div class="col-sm-4">
 	          	<H4 class="text-center text-uppercase">Abilità Sociali</H4>
 	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
 		            <skill></skill>
-		        </ul>
+		          </ul>
 	          	<attribute items="abSociali" pg="currPg"></attribute>
         	</div>
     </div>
