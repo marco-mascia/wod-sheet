@@ -1,15 +1,21 @@
-<h2>home</h2>
-<div ng-controller="PgController as pgCtrl">
 
-	<div class="form-group">
-		<select ng-options="item as item.identita.nome for item in pgList" ng-model="currPg" class="form-control input-md"></select>          
-	</div>
+<div ng-controller="pgCtrl">
+
+	<div class="row-fluid identity">
+		<div class="col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 text-center">			
+			<div class="form-group">
+				<select ng-options="item as item.identita.nome for item in pgList" ng-model="currPg" class="form-control input-md"></select>          
+			</div>		
+		</div>
+	</div>	
 
 	<div class="row identity" ng-show="currPg">
-		<H2 class="text-center name">{{currPg.identita.nome}}</H2>
-		<H3 class="text-center concetto">{{currPg.identita.concetto}}</H3>
-		<H3 class="text-center giocatore">{{currPg.identita.giocatore}}</H3>
-		<p class="text-center rotatedFloralHeartBullet"></p>
+		<div class="col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 text-center">
+			<H2 class="text-center name">{{currPg.identita.nome}}</H2>
+			<H3 class="text-center concetto">{{currPg.identita.concetto}}</H3>
+			<H3 class="text-center giocatore">{{currPg.identita.giocatore}}</H3>
+			<p class="text-center rotatedFloralHeartBullet"></p>
+		</div>
 	</div>  
 
 	<H3 class="text-center text-uppercase" ng-show="currPg">Attributi</H3>  
@@ -34,7 +40,7 @@
 
 
 	<div class="row" ng-show="currPg">                  
-		<p class="text-center rotatedFloralHeartBullet"></p>    
+		<p class="text-center rotatedFloralHeartBullet"></p>   
 		
 		<div class="col-sm-4 col-md-4 abilities">
 			<H4 class="text-center text-uppercase mental">Abilità Mentali</H4>
@@ -42,24 +48,22 @@
 				<skill></skill>
 			</ul>
 			<H4 class="text-center text-uppercase phisical">Abilità Fisiche</h4>
-				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
-					<skill></skill>
-				</ul>
-				<H4 class="text-center text-uppercase social">Abilità Sociali</H4>
-				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
-					<skill></skill>
-				</ul>
-			</div>                
-
-		<!--
+			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
+				<skill></skill>
+			</ul>
+			<H4 class="text-center text-uppercase social">Abilità Sociali</H4>
+			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
+				<skill></skill>
+			</ul>
+		</div>
+		
 		<div class="col-sm-4 col-md-4">
 			<H4 class="text-center text-uppercase merits">Talenti</H4>	        
 			<H4 class="text-center text-uppercase extrainfo"></H4>               
-			<ul ng-repeat="attr in currPg.talenti">
-			   <skill></skill>
+			<ul ng-repeat="attr in currPg.talents">
+				<skill></skill>
 			</ul>
-		</div>      
-		-->	    
+		</div>      		
 
 	<div class="healthValue text-center clearfix col-sm-4 col-md-4">
 		<H4 class="text-center text-uppercase">Salute</H4>     
@@ -90,9 +94,7 @@
 	<H4 class="text-center text-uppercase willpower col-sm-4 col-md-4">Integrità</H4>     
 	<div class="willpowerValue text-center clearfix col-sm-4 col-md-4">		
 		<input ng-model="currPg.identita.morality" ng-change="updateMorality()" type="text" style="width: 80px; text-align: right;"/>
-	</div>     
-	
-
+	</div>
 </div> 
 
 <div class="row" ng-show="currPg" ng-controller="EquipController as eqCtrl">

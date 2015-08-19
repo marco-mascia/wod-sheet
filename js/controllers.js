@@ -12,7 +12,12 @@ angular.module('controllers', [])
 	$scope.tArray = [{name:'Sim', value:'1'},{name:'Sala', value:'2'},{name:'Bim', value:'3'}];
 })
 
-.controller('PgController', function($scope, $firebaseArray){
+.controller('pgGridCtrl', function($scope, $firebaseArray) {	 
+	console.log('::: pgGridCtrl :::');
+
+})
+
+.controller('pgCtrl', function($scope, $firebaseArray){
 	var ref = new Firebase("https://wod.firebaseio.com/pgList");	
 	$scope.pgList = $firebaseArray(ref);	
 
@@ -58,20 +63,19 @@ angular.module('controllers', [])
 
 .controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali){
 
-	var ref = new Firebase("https://wod.firebaseio.com/pgList");	
-	
+	var ref = new Firebase("https://wod.firebaseio.com/pgList");
 	$scope.init = function () {
 		if (!$scope.currPg) { 			            			        		            
-			$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[]};
+			$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[], 'talents':[]};
 		}
 		$scope.pgList = $firebaseArray(ref);		
 		$scope.abMentali = abMentali_apoc.getAll();	
 		$scope.abFisiche = abFisiche_apoc.getAll();	
 		$scope.abSociali = abSociali.getAll();		
 		$scope.isEditor = true;	
+		$scope.cTalent = '';	
 	};
 	
-
 	$scope.removeSkill = function(skill){
 		console.log('remove skill ', skill);		
 		var index = $scope.currPg.elencoabilita.indexOf(skill);
@@ -80,8 +84,22 @@ angular.module('controllers', [])
 		}		
 	};
 
+	$scope.addTalent = function(){
+		console.log('... Add talent ...', $scope.cTalent);	
+		$scope.currPg.talents.push($scope.cTalent);
+	}
+
+	$scope.removeTalent = function(item){
+		console.log('... Remove talent ...', item);	
+		var index = $scope.currPg.talents.indexOf(item);
+		if (index > -1) {
+			$scope.currPg.talents.splice(index, 1);
+		}	
+	}
+
+
 	$scope.addPg = function(){			
-		console.log('--- Add current pg! ---');
+		console.log('... Add current pg! ...');
 		$scope.currPg.identita.health = parseInt($scope.currPg.attributi.cos.value) + 5;
 		$scope.currPg.identita.currhealth = parseInt($scope.currPg.attributi.cos.value) + 5;
 		$scope.currPg.identita.size = 5;

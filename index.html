@@ -25,22 +25,34 @@
 	<!-- NAVIGATION -->        
 	<nav class="navbar navbar-default navbar-fixed-top">
 		<div class="container-fluid">
-			<div class="navbar-header">
-				<ul class="nav navbar-nav">
-					<li class="active"><a href="#home">Home<span class="sr-only">(current)</span></a></li>
-					<li><a href="#editor">Editor</a></li>
-					<!-- <li><a href="#workshop">Workshop</a></li> -->
+			<div class="navbar-header"></div>
+
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#home">Home<span class="sr-only">(current)</span></a></li>
+				<li><a href="#editor">Editor</a></li>
+				<li><a href="#pg-grid">Pg Grid</a></li>
+			</ul>
+			<!--
+			<div class="btn-group">
+				<button type="button" class="btn btn-default">Action</button>
+				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<span class="caret"></span>
+					<span class="sr-only">Toggle Dropdown</span>
+				</button>
+				<ul class="dropdown-menu">
+					<li ng-repeat='item in pgList'><a href="#">{{item.identita.nome}}</a></li>						
 				</ul>
 			</div>
+			-->
 		</div>
 	</nav>
 
-	<!-- MAIN CONTENT AND INJECTED VIEWS -->
-	<div id="main">
-		<!-- angular templating -->
-		<!-- this is where content will be injected -->
-		<div ng-view></div>
-	</div>
+<!-- MAIN CONTENT AND INJECTED VIEWS -->
+<div id="main">
+	<!-- angular templating -->
+	<!-- this is where content will be injected -->
+	<div ng-view></div>
+</div>
 
 		<!--[if lt IE 7]>
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
