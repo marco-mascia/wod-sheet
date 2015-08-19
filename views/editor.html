@@ -1,67 +1,70 @@
-                
+								
 	<div class="row">	
 		<div class="col-sm-12 col-md-4 col-md-offset-4">
-    		<input class="text-center name form-control" ng-model="currPg.identita.nome" placeholder="Nome" ng-minlength="3" required>
-    		<input class="text-center concetto form-control" ng-model="currPg.identita.concetto" placeholder="Concetto" ng-minlength="3" required>
-    		<input class="text-center giocatore form-control" ng-model="currPg.identita.giocatore" placeholder="Giocatore" ng-minlength="3" required>
-    	</div>
+				<input class="text-center name form-control" ng-model="currPg.identita.nome" placeholder="Nome" ng-minlength="3" required>
+				<input class="text-center concetto form-control" ng-model="currPg.identita.concetto" placeholder="Concetto" ng-minlength="3" required>
+				<input class="text-center giocatore form-control" ng-model="currPg.identita.giocatore" placeholder="Giocatore" ng-minlength="3" required>
+			</div>
 	</div>
 
-    <p class="text-center rotatedFloralHeartBullet"></p>
-    <H3 class="text-center text-uppercase">Attributi</H3>                  
-    <div class="row attributes">                
-        <div class="col-sm-4 col-md-4 mental">
-            <ul>                                          
-               <li><input class="form-control" ng-model="currPg.attributi.int.value" placeholder="Intelligenza" ng-minlength="1" required></li>
-               <li><input class="form-control" ng-model="currPg.attributi.pro.value" placeholder="Prontezza" ng-minlength="1" required></li>
-               <li><input class="form-control" ng-model="currPg.attributi.fer.value" placeholder="Fermezza" ng-minlength="1" required></li>
-            </ul>
-        </div>                
-        <div class="col-sm-4 col-md-4 phisical">                           
-           <ul>                                          
-               <li><input class="form-control" ng-model="currPg.attributi.for.value" placeholder="Forza" ng-minlength="1" required></li>
-               <li><input class="form-control" ng-model="currPg.attributi.des.value" placeholder="Destrezza" ng-minlength="1" required></li>
-               <li><input class="form-control" ng-model="currPg.attributi.cos.value" placeholder="Costituzione" ng-minlength="1" required></li>
-           </ul>                                     
-        </div>
-        <div class="col-sm-4 col-md-4 social">
-            <ul>                                          
-               <li><input class="form-control" ng-model="currPg.attributi.pre.value" placeholder="Presenza" ng-minlength="1" required></li>
-               <li><input class="form-control" ng-model="currPg.attributi.asc.value" placeholder="Ascendente" ng-minlength="1" required></li>
-               <li><input class="form-control" ng-model="currPg.attributi.aut.value" placeholder="Autocontrollo" ng-minlength="1" required></li>
-           </ul>
-        </div>
-    </div> 
-     <div class="row">                  
-     		<p class="text-center rotatedFloralHeartBullet"></p>
-        	<div class="col-sm-4">
-	            <H4 class="text-center text-uppercase">Abilità Mentali</H4>
-	            <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
-		            <skill></skill>
-		          </ul>
-	          	<attribute items="abMentali" pg="currPg"></attribute>
-			</div>			
-			<div class="col-sm-4">
-	          	<H4 class="text-center text-uppercase">Abilità Fisiche</H4>
-	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
-		            <skill></skill>
-		          </ul>	        
-	          	<attribute items="abFisiche" pg="currPg"></attribute>
-          	</div>
-          	<div class="col-sm-4">
-	          	<H4 class="text-center text-uppercase">Abilità Sociali</H4>
-	          	<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
-		            <skill></skill>
-		          </ul>
-	          	<attribute items="abSociali" pg="currPg"></attribute>
-        	</div>
-    </div>
-                
-    <div class="btn-group" role="group">
-    	<button type="button" class="btn btn-default" ng-click="addPg()">Add Pg</button>    	
-      <button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>
-      <button type="button" class="btn btn-default" ng-click="fixMe()">FixMe</button>        
-    </div>
+		<p class="text-center rotatedFloralHeartBullet"></p>
+		<H3 class="text-center text-uppercase">Attributi</H3>      
+
+		<form name="myForm">            
+			<div class="row attributes">                
+					<div class="col-sm-4 col-md-4 mental">
+							<ul>                                          
+								 <li><input class="form-control" ng-model="currPg.attributi.int.value" placeholder="Intelligenza" ng-minlength="1" required></li>
+								 <li><input class="form-control" ng-model="currPg.attributi.pro.value" placeholder="Prontezza" ng-minlength="1" required></li>
+								 <li><input class="form-control" ng-model="currPg.attributi.fer.value" placeholder="Fermezza" ng-minlength="1" required></li>
+							</ul>
+					</div>                
+					<div class="col-sm-4 col-md-4 phisical">                           
+						 <ul>                                          
+								 <li><input class="form-control" ng-model="currPg.attributi.for.value" placeholder="Forza" ng-minlength="1" required></li>
+								 <li><input class="form-control" ng-model="currPg.attributi.des.value" placeholder="Destrezza" ng-minlength="1" required></li>
+								 <li><input class="form-control" ng-model="currPg.attributi.cos.value" placeholder="Costituzione" ng-minlength="1" required></li>
+						 </ul>                                     
+					</div>
+					<div class="col-sm-4 col-md-4 social">
+							<ul>                                          
+								 <li><input class="form-control" ng-model="currPg.attributi.pre.value" placeholder="Presenza" ng-minlength="1" required></li>
+								 <li><input class="form-control" ng-model="currPg.attributi.asc.value" placeholder="Ascendente" ng-minlength="1" required></li>
+								 <li><input class="form-control" ng-model="currPg.attributi.aut.value" placeholder="Autocontrollo" ng-minlength="1" required></li>
+						 </ul>
+					</div>
+			</div>  
+
+			<div class="row">                  
+					<p class="text-center rotatedFloralHeartBullet"></p>
+						<div class="col-sm-4">
+								<H4 class="text-center text-uppercase">Abilità Mentali</H4>
+								<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
+									<skill></skill>
+								</ul>
+								<attribute items="abMentali" pg="currPg"></attribute>
+				</div>			
+				<div class="col-sm-4">
+								<H4 class="text-center text-uppercase">Abilità Fisiche</H4>
+								<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
+									<skill></skill>
+								</ul>	        
+								<attribute items="abFisiche" pg="currPg"></attribute>
+							</div>
+							<div class="col-sm-4">
+								<H4 class="text-center text-uppercase">Abilità Sociali</H4>
+								<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
+									<skill></skill>
+								</ul>
+								<attribute items="abSociali" pg="currPg"></attribute>
+						</div>
+			</div>
+		</form>     
+		<div class="btn-group" role="group">
+			<button type="button" class="btn btn-default" ng-click="addPg()" ng-show="myForm.$valid">Add Pg</button>    	
+			<button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>
+			
+		</div>
 	
 
 

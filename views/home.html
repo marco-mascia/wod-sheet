@@ -6,127 +6,145 @@
 	</div>
 
 	<div class="row identity" ng-show="currPg">
-	    <H2 class="text-center name">{{currPg.identita.nome}}</H2>
-	    <H3 class="text-center concetto">{{currPg.identita.concetto}}</H3>
-	    <H3 class="text-center giocatore">{{currPg.identita.giocatore}}</H3>
-	    <p class="text-center rotatedFloralHeartBullet"></p>
+		<H2 class="text-center name">{{currPg.identita.nome}}</H2>
+		<H3 class="text-center concetto">{{currPg.identita.concetto}}</H3>
+		<H3 class="text-center giocatore">{{currPg.identita.giocatore}}</H3>
+		<p class="text-center rotatedFloralHeartBullet"></p>
 	</div>  
 
 	<H3 class="text-center text-uppercase" ng-show="currPg">Attributi</H3>  
 
 	<div class="row attributes" ng-show="currPg">                
-	    <div class="col-sm-4 col-md-4 mental">
-	        <ul ng-repeat="item in currPg.attributi | filter: { type: 'men' }">                                          
-	            <skill></skill>
-	        </ul>
-	    </div>                
-	    <div class="col-sm-4 col-md-4 phisical">
-	        <ul ng-repeat="item in currPg.attributi | filter: { type: 'fis' }">
-	            <skill></skill>
-	        </ul>                
-	    </div>  
-	    <div class="col-sm-4 col-md-4 social">
-	        <ul ng-repeat="item in currPg.attributi | filter: { type: 'soc' }">
-	           <skill></skill>
-	        </ul> 
-	    </div>                
+		<div class="col-sm-4 col-md-4 mental">
+			<ul ng-repeat="item in currPg.attributi | filter: { type: 'men' }">                                          
+				<skill></skill>
+			</ul>
+		</div>                
+		<div class="col-sm-4 col-md-4 phisical">
+			<ul ng-repeat="item in currPg.attributi | filter: { type: 'fis' }">
+				<skill></skill>
+			</ul>                
+		</div>  
+		<div class="col-sm-4 col-md-4 social">
+			<ul ng-repeat="item in currPg.attributi | filter: { type: 'soc' }">
+				<skill></skill>
+			</ul> 
+		</div>                
 	</div> 
 
 
 	<div class="row" ng-show="currPg">                  
-	    <p class="text-center rotatedFloralHeartBullet"></p>    
-	    
-	    <div class="col-sm-4 col-md-4 abilities">
-	        <H4 class="text-center text-uppercase mental">Abilità Mentali</H4>
-	        <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
-	           <skill></skill>
-	        </ul>
-	        <H4 class="text-center text-uppercase phisical">Abilità Fisiche</h4>
-	        <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
-	           <skill></skill>
-	        </ul>
-	        <H4 class="text-center text-uppercase social">Abilità Sociali</H4>
-	        <ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
-	           <skill></skill>
-	        </ul>
-	    </div>                
+		<p class="text-center rotatedFloralHeartBullet"></p>    
+		
+		<div class="col-sm-4 col-md-4 abilities">
+			<H4 class="text-center text-uppercase mental">Abilità Mentali</H4>
+			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
+				<skill></skill>
+			</ul>
+			<H4 class="text-center text-uppercase phisical">Abilità Fisiche</h4>
+				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
+					<skill></skill>
+				</ul>
+				<H4 class="text-center text-uppercase social">Abilità Sociali</H4>
+				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
+					<skill></skill>
+				</ul>
+			</div>                
 
-	    <!--
-	    <div class="col-sm-4 col-md-4">
-	        <H4 class="text-center text-uppercase merits">Talenti</H4>	        
-	        <H4 class="text-center text-uppercase extrainfo"></H4>               
-	        <ul ng-repeat="attr in currPg.talenti">
-	           <skill></skill>
-	        </ul>
-	    </div>      
+		<!--
+		<div class="col-sm-4 col-md-4">
+			<H4 class="text-center text-uppercase merits">Talenti</H4>	        
+			<H4 class="text-center text-uppercase extrainfo"></H4>               
+			<ul ng-repeat="attr in currPg.talenti">
+			   <skill></skill>
+			</ul>
+		</div>      
 		-->	    
-	    
-	    <div class="healthValue text-center clearfix col-sm-4 col-md-4">
-	       <H4 class="text-center text-uppercase">Salute</H4>     
-	       <input ng-model="currPg.identita.currhealth" ng-change="updateHealth()" type="text"  style="width: 80px; text-align: right;"/>/{{currPg.identita.currhealth}}
-	    </div>
 
-	    <!--
-	    <H4 class="text-center text-uppercase willpower col-sm-4 col-md-4">Volontà</H4>     
-	    <div class="willpowerValue text-center clearfix col-sm-4 col-md-4">
-	        {{currPg.identita.volonta}}
-	    </div>                    
-		-->
+	<div class="healthValue text-center clearfix col-sm-4 col-md-4">
+		<H4 class="text-center text-uppercase">Salute</H4>     
+		<input ng-model="currPg.identita.currhealth" ng-change="updateHealth()" type="text" style="width: 80px; text-align: right;"/>/{{currPg.identita.health}}		
+		<ul>
+			<li class="skill">
+				<div class="pull-left white">Taglia</div> <div class="pull-right white">{{currPg.identita.size}}</div>
+			</li>
+			<li class="skill">
+				<div class="pull-left white">Velocità</div> <div class="pull-right white">{{currPg.identita.speed}}</div>
+			</li>
+			<li class="skill">
+				<div class="pull-left white">Mod. Iniziativa</div> <div class="pull-right white">{{currPg.identita.initiative}}</div>
+			</li>			
+			<li class="skill">
+				<div class="pull-left white">Difesa</div> <div class="pull-right white">{{currPg.identita.defence}}</div>
+			</li>
+		</ul>
+	</div>
 
-	</div> 
+	
+	<H4 class="text-center text-uppercase willpower col-sm-4 col-md-4">Volontà</H4>     
+	<div class="willpowerValue text-center clearfix col-sm-4 col-md-4">		
+		<input ng-model="currPg.identita.currwill" ng-change="updateWill()" type="text" style="width: 80px; text-align: right;"/>/{{currPg.identita.will}}	
+		<!--<bigrating val="currPg.identita.will" cVal="currPg.identita.currwill"></bigrating>-->
+	</div>
 
-	<div class="row" ng-show="currPg" ng-controller="EquipController as eqCtrl">
+	<H4 class="text-center text-uppercase willpower col-sm-4 col-md-4">Integrità</H4>     
+	<div class="willpowerValue text-center clearfix col-sm-4 col-md-4">		
+		<input ng-model="currPg.identita.morality" ng-change="updateMorality()" type="text" style="width: 80px; text-align: right;"/>
+	</div>     
+	
 
-	    <div class="col-md-12">
-	        <H4 class="text-center text-uppercase">Equipaggiamento</H4>
-	        <ul>
-	            <li ng-repeat="obj in currPg.equip">
-	                <div class="row">
-	                  <div class="col-xs-12 col-md-3"><strong>{{obj.name}}</strong> </div>
-	                  <div class="col-xs-10"><i>{{obj.descr}}</i> </div>
-	                  <div class="col-xs-2">
-	                    <div class="btn-group" role="group">
-	                        <button type="button" class="btn btn-sm pull-right" aria-label="Left Align" ng-click="currPg.equip.$remove(obj)" data-dismiss="alert">
-	                            <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-	                        </button>                  
-	                    </div>
-	                  </div>
-	                </div>
-	            </li>
-	        </ul>
-	        <p class="text-center rotatedFloralHeartBullet"></p>                                            
-	        <div class="row">
-	          <div class="col-sm-4 col-lg-4">
-	            <div class="form-group">          
-	              <div class="col-md-8">
-	                <input type="text" class="form-control" ng-model="newObj.name" placeholder="Oggetto">
-	              </div>
-	            </div>
-	          </div>
-	          <div class="col-sm-4 col-lg-4">
-	            <div class="form-group">          
-	              <div class="col-md-8">
-	                <input type="text" class="form-control" ng-model="newObj.descr" placeholder="Descrizione">
-	              </div>
-	            </div>
-	          </div> 
-	          <div class="col-sm-12 col-md-4">
-	             <div class="form-group">          
-	              <div class="col-sm-12 col-md-4">     
-	                <button type="button" class="btn pull-right" aria-label="Left Align" ng-click="addItem()">
-	                   <span class="glyphicon glyphicon-plus" aria-hidden="true" ></span> Aggiungi
-	                </button>
-	              </div>
-	             </div>
-	          </div>
-	        </div>
-	    </div>
-	</div>    
+</div> 
 
-	    <div class="btn-group" role="group">
-    	<button type="button" class="btn btn-default" ng-click="addPg()">Add Pg</button>    	
-      <button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>
-      <button type="button" class="btn btn-default" ng-click="fixMe()">FixMe</button>        
-    </div>
+<div class="row" ng-show="currPg" ng-controller="EquipController as eqCtrl">
+
+	<div class="col-md-12">
+		<H4 class="text-center text-uppercase">Equipaggiamento</H4>
+		<ul>
+			<li ng-repeat="obj in currPg.equip">
+				<div class="row">
+					<div class="col-xs-12 col-md-3"><strong>{{obj.name}}</strong> </div>
+					<div class="col-xs-10"><i>{{obj.descr}}</i> </div>
+					<div class="col-xs-2">
+						<div class="btn-group" role="group">
+							<button type="button" class="btn btn-sm pull-right" aria-label="Left Align" ng-click="currPg.equip.$remove(obj)" data-dismiss="alert">
+								<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+							</button>                  
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<p class="text-center rotatedFloralHeartBullet"></p>                                            
+		<div class="row">
+			<div class="col-sm-4 col-lg-4">
+				<div class="form-group">          
+					<div class="col-md-8">
+						<input type="text" class="form-control" ng-model="newObj.name" placeholder="Oggetto">
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 col-lg-4">
+				<div class="form-group">          
+					<div class="col-md-8">
+						<input type="text" class="form-control" ng-model="newObj.descr" placeholder="Descrizione">
+					</div>
+				</div>
+			</div> 
+			<div class="col-sm-12 col-md-4">
+				<div class="form-group">          
+					<div class="col-sm-12 col-md-4">     
+						<button type="button" class="btn pull-right" aria-label="Left Align" ng-click="addItem()">
+							<span class="glyphicon glyphicon-plus" aria-hidden="true" ></span> Aggiungi
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>    
+
+<div class="btn-group" role="group">
+	<button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>	
+</div>
 
 </div>

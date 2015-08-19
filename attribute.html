@@ -1,21 +1,21 @@
 <li>
-      <div class="row-fluid">
-        <div class="col-md-8">          
-          <div class="form-group">
-            <select ng-options="item as item.label for item in items track by item.abId" ng-model="sk" class="form-control input-md"></select>          
-          </div>    
+    <div class="row-fluid">
+      <div class="col-md-8">          
+        <div class="form-group">
+          <select ng-options="item as item.label for item in items track by item.abId" ng-model="sk" class="form-control input-md"></select>          
         </div>    
-        
-        <div class="col-md-2">
-          <div class="form-group">
-            <input class="form-control input-md" ng-model="sk.value">  
-          </div>
-        </div>
-        
-        <div class="col-md-2">
-          <button type="button" class="btn btn-md" ng-click="addSkill()" data-dismiss="alert">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-          </button>
+      </div>    
+      
+      <div class="col-md-2">
+        <div class="form-group">
+          <input class="form-control input-md" ng-model="sk.value">  
         </div>
       </div>
+      
+      <div class="col-md-2">
+        <button type="button" class="btn btn-md" ng-click="addSkill()" data-dismiss="alert">
+          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
 </li>

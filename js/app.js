@@ -2,22 +2,22 @@
 	var app = angular.module('wod', ['services', 'controllers', 'firebase', 'ngRoute'])
 
 	// configure our routes
-    .config(function($routeProvider) {
-        $routeProvider
-            // route for the home page
-            .when('/home', {
-                templateUrl : 'views/home.html',
-                controller  : 'mainController'
-            })                      
-            .when('/editor', {
-                templateUrl : 'views/editor.html',
-                controller  : 'editorCtrl'
-            })
-            .when('/workshop', {
-                templateUrl : 'views/workshop.html',
-                controller  : 'workshopCtrl'
-            });          
-    })
+	.config(function($routeProvider) {
+		$routeProvider
+			// route for the home page
+			.when('/home', {
+				templateUrl : 'views/home.html',
+				controller  : 'mainController'
+			})                      
+			.when('/editor', {
+				templateUrl : 'views/editor.html',
+				controller  : 'editorCtrl'
+			})
+			.when('/workshop', {
+				templateUrl : 'views/workshop.html',
+				controller  : 'workshopCtrl'
+			});          
+		})
 
 	.directive('skill', function(){
 		return{
@@ -41,6 +41,20 @@
 			},					
 			controller: function(){},
 			controllerAs: 'rtCtrl'
+		};
+	})
+
+	.directive('bigrating', function(){
+		return{
+			restrict: 'E',	
+			scope:{
+				val: '=',
+				cVal: '='
+			},	
+			templateUrl: function(elem, attr){				
+				return 'bigrating.html';	
+			},					
+			controller: function(){}
 		};
 	})
 
@@ -84,7 +98,7 @@
 						scope.pg.elencoabilita.push(scope.sk);			
 					}						
 				}				
-        	}
+			}
 		};
 	})
 

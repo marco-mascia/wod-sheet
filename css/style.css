@@ -74,6 +74,7 @@ h1, h2, h3, h4{
 .skillName{ float: left; background-color: #fff;}
 .skillValue{ background-color: #fff; margin-top: 4px; padding-right: 1px; display: inline-block; display: -webkit-inline-box;}
 .infoValue{ float: right; background-color: #fff; text-align: right;}
+.white{background-color: #fff;}
 
 .rotatedFloralHeartBullet {
 	font-size: xx-large;
