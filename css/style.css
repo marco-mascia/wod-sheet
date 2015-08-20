@@ -48,9 +48,6 @@
 }
 */
 
-
-
-
 body {
   font-size: 13px;
   font: large/1.556 "Libertine", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
@@ -70,11 +67,7 @@ h1, h2, h3, h4{
 }
 
 /* default */
-
 .cfix{ clear: both; }
-
-
-
 
 /* skillbox */
 .skill{ clear: both; /*overflow: hidden;*/ white-space: nowrap; background: url(../images/dot.png) 0px 0.8em repeat-x;}

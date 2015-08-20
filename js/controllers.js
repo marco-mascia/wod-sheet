@@ -13,19 +13,15 @@ angular.module('controllers', [])
 })
 
 .controller('pgGridCtrl', function($scope, $firebaseArray) {	 
-	console.log('::: pgGridCtrl :::');
+	console.log('... pgGridCtrl ...');
 
 })
 
-.controller('pgCtrl', function($scope, $firebaseArray){
+
+.controller('pgCtrl', function($scope, $firebaseArray, $location){
+	console.log('... pgCtrl ...');
 	var ref = new Firebase("https://wod.firebaseio.com/pgList");	
 	$scope.pgList = $firebaseArray(ref);	
-
-	$scope.remove = function(){
-		console.log('remove current pg!');
-		$scope.pgList.$remove($scope.currPg);
-	};
-
 
 	$scope.updateHealth = function() {
 		var pgRef = ref.child($scope.currPg.$id + '/identita');	  
@@ -59,9 +55,25 @@ angular.module('controllers', [])
 		($scope.isEditor ? $scope.isEditor=false : $scope.isEditor=true);
 	};
 
+	$scope.selectPg = function(pg){
+		console.log('selectPg ', pg);
+		$scope.currPg = pg;
+		//$location.path("/home");
+	}
+
+	$scope.backToList = function(){		
+		$scope.currPg = null;		
+	}
+
+	$scope.deletePg = function(){
+		console.log('remove current pg! ', $scope.currPg);
+		$scope.pgList.$remove($scope.currPg);
+		$scope.currPg = null;
+	};
+
 })
 
-.controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali){
+.controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali, $location){
 
 	var ref = new Firebase("https://wod.firebaseio.com/pgList");
 	$scope.init = function () {
@@ -87,7 +99,7 @@ angular.module('controllers', [])
 	$scope.addTalent = function(){
 		console.log('... Add talent ...', $scope.cTalent);	
 		$scope.currPg.talents.push($scope.cTalent);
-	}
+	};
 
 	$scope.removeTalent = function(item){
 		console.log('... Remove talent ...', item);	
@@ -95,8 +107,7 @@ angular.module('controllers', [])
 		if (index > -1) {
 			$scope.currPg.talents.splice(index, 1);
 		}	
-	}
-
+	};
 
 	$scope.addPg = function(){			
 		console.log('... Add current pg! ...');
@@ -124,6 +135,7 @@ angular.module('controllers', [])
 		$scope.currPg.attributi.push({'abId': 'asc', 'type':'soc', 'label':'Ascendente', 'value': $scope.currPg.attributi.asc.value});
 		$scope.currPg.attributi.push({'abId': 'aut', 'type':'soc', 'label':'Autocontrollo', 'value': $scope.currPg.attributi.aut.value});
 		$scope.pgList.$add($scope.currPg);
+		$location.path("/home");
 	};
 
 	$scope.init();

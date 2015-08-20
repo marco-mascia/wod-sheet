@@ -16,11 +16,7 @@
 			.when('/workshop', {
 				templateUrl : 'views/workshop.html',
 				controller  : 'workshopCtrl'
-			})
-			.when('/pg-grid', {
-				templateUrl : 'views/pg-grid.html',
-				controller  : 'pgCtrl'
-			});          
+			});	         
 		})
 
 	.directive('skill', function(){

@@ -103,6 +103,7 @@
 		</div>  
 		
 		<p class="text-center rotatedFloralHeartBullet"></p>
+
 		<div class="row-fluid">
 			
 			<div class="col-sm-4">
@@ -111,7 +112,8 @@
 					<skill></skill>
 				</ul>
 				<attribute items="abMentali" pg="currPg"></attribute>
-			</div>			
+			</div>
+
 			<div class="col-sm-4">
 				<H4 class="text-center">Abilità Fisiche</H4>
 				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
@@ -164,15 +166,11 @@
 		</div>
 	</fieldset>
 </form>
-
 <div class="row-fluid">	
 	<div class="col-sm-12 col-md-4 col-md-offset-4">	
 		<div class="btn-group" role="group">
 			<button type="button" class="btn btn-default" ng-click="addPg()" ng-show="myForm.$valid">Add Pg</button>    	
-			<button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>
+			<!--<button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>-->
 		</div>
 	</div>
 </div>
-
-
-
