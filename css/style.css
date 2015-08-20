@@ -69,10 +69,17 @@ h1, h2, h3, h4{
 	text-shadow: 0 0 1px #667;
 }
 
+/* default */
+
+.cfix{ clear: both; }
+
+
+
+
 /* skillbox */
-.skill{ clear: both; overflow: hidden; white-space: nowrap; background: url(../images/dot.png) 0px 0.8em repeat-x;}
+.skill{ clear: both; /*overflow: hidden;*/ white-space: nowrap; background: url(../images/dot.png) 0px 0.8em repeat-x;}
 .skillName{ float: left; background-color: #fff;}
-.skillValue{ background-color: #fff; margin-top: 4px; padding-right: 1px; display: inline-block; display: -webkit-inline-box;}
+.skillValue{ margin-top: 4px; padding-right: 1px; display: inline-block; display: -webkit-inline-box;}
 .infoValue{ float: right; background-color: #fff; text-align: right;}
 .white{background-color: #fff;}
 
@@ -137,7 +144,7 @@ h1, h2, h3, h4{
 .rating {
     color: #a9a9a9;
     margin: 0;
-    padding: 0;
+    padding: 3px 0 0 0;
 }
 ul.rating {
     display: inline-block;
