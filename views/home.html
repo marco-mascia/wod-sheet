@@ -47,7 +47,6 @@
 			<p class="text-center rotatedFloralHeartBullet"></p>   
 			
 			<div class="col-sm-4 col-md-4 abilities">
-
 				<H4 class="text-center mental cfix">Abilità Mentali</H4>
 				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
 					<skill></skill>
@@ -61,12 +60,11 @@
 				<H4 class="text-center social cfix">Abilità Sociali</H4>
 				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
 					<skill></skill>
-				</ul>			
-
+				</ul>
 			</div>
 			
 			<div class="col-sm-4 col-md-4">
-				<H4 class="text-center merits cfix">Talenti</H4>	        			             
+				<H4 class="text-center merits cfix">Talenti</H4>
 				<ul ng-repeat="attr in currPg.talents">
 					<skill></skill>
 				</ul>
@@ -173,8 +171,9 @@
 		</div>   
 
 		<div role="group">
-			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Remove Pg</button>	
+			<button type="button" class="btn btn-default" ng-click="edit()">Edit</button>				
 			<button type="button" class="btn btn-default" ng-click="backToList()">Back to List</button>				
+			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Remove Pg</button>	
 		</div>
 	</div>
 </div>

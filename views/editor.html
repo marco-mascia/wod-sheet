@@ -32,73 +32,35 @@
 
 
 		<div class="row-fluid attributes">
-			<div class="col-sm-4 col-md-4 mental">			
-				<div class="form-group">
-					<label for="int" class="col-lg-3 control-label">Intelligenza</label>
-					<div class="col-lg-9">
-						<input type="text" id="int" class="form-control" ng-model="currPg.attributi.int.value" required>
-					</div>
-				</div>
+			<div class="col-sm-4 col-md-4 mental">	
 
-				<div class="form-group">
-					<label for="pro" class="col-lg-3 control-label">Prontezza</label>
+				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'men' }">
+					<label for="item.abId" class="col-lg-3 control-label">{{item.label}}</label>
 					<div class="col-lg-9">
-						<input type="text" id="pro" class="form-control" ng-model="currPg.attributi.pro.value" required>
+						<input type="text" id="item.abId" class="form-control" ng-model="item.value" required>
 					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="fer" class="col-lg-3 control-label">Fermezza</label>
-					<div class="col-lg-9">
-						<input type="text" id="fer" class="form-control" ng-model="currPg.attributi.fer.value" required>
-					</div>
-				</div>
+				</div> 				
 
 			</div>
 			<div class="col-sm-4 col-md-4 phisical">
 
-				<div class="form-group">
-					<label for="for" class="col-lg-3 control-label">Forza</label>
+				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'fis' }">
+					<label for="item.abId" class="col-lg-3 control-label">{{item.label}}</label>
 					<div class="col-lg-9">
-						<input type="text" id="for" class="form-control" ng-model="currPg.attributi.for.value" required>
+						<input type="text" id="item.abId" class="form-control" ng-model="item.value" required>
 					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="des" class="col-lg-3 control-label">Destrezza</label>
-					<div class="col-lg-9">
-						<input type="text" id="des" class="form-control" ng-model="currPg.attributi.des.value" required>
-					</div>
-				</div>
-
-				<div class="form-group">
-					<label for="cos" class="col-lg-3 control-label">Costituzione</label>
-					<div class="col-lg-9">
-						<input type="text" id="cos" class="form-control" ng-model="currPg.attributi.cos.value" required>
-					</div>
-				</div>
+				</div> 
 
 			</div>
 			<div class="col-sm-4 col-md-4 social">
 
-				<div class="form-group">
-					<label for="pre" class="col-lg-3 control-label">Presenza</label>
+				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'soc' }">
+					<label for="item.abId" class="col-lg-3 control-label">{{item.label}}</label>
 					<div class="col-lg-9">
-						<input type="text" id="pre" class="form-control" ng-model="currPg.attributi.pre.value" required>
+						<input type="text" id="item.abId" class="form-control" ng-model="item.value" required>
 					</div>
-				</div>
-				<div class="form-group">
-					<label for="asc" class="col-lg-3 control-label">Ascendente</label>
-					<div class="col-lg-9">
-						<input type="text" id="asc" class="form-control" ng-model="currPg.attributi.asc.value" required>
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="aut" class="col-lg-3 control-label">Autocontrollo</label>
-					<div class="col-lg-9">
-						<input type="text" id="aut" class="form-control" ng-model="currPg.attributi.aut.value" required>
-					</div>
-				</div>
+				</div> 
+
 			</div>
 		</div>  
 		
@@ -129,10 +91,10 @@
 				<attribute items="abSociali" pg="currPg"></attribute>
 			</div>
 		</div>
-
+		
+		<p class="text-center rotatedFloralHeartBullet"></p>
 
 		<div class="row-fluid">		
-			<p class="text-center rotatedFloralHeartBullet"></p>
 			<div class="col-sm-12 col-md-4 col-md-offset-4">
 				<H4 class="text-center text-uppercase">Pregi</H4>
 				<ul>
@@ -169,8 +131,8 @@
 <div class="row-fluid">	
 	<div class="col-sm-12 col-md-4 col-md-offset-4">	
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" ng-click="addPg()" ng-show="myForm.$valid">Add Pg</button>    	
-			<!--<button type="button" class="btn btn-default" ng-click="removePg()">Remove Pg</button>-->
+			<button type="button" class="btn btn-default" ng-click="addPg()" ng-show="myForm.$valid">Add Pg</button>   
+			<button type="button" class="btn btn-default" ng-click="updatePg()" ng-show="myForm.$valid">Save</button>    				
 		</div>
 	</div>
 </div>
