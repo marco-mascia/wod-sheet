@@ -70,7 +70,7 @@ h1, h2, h3, h4{
 .cfix{ clear: both; }
 
 /* skillbox */
-.skill{ clear: both; /*overflow: hidden;*/ white-space: nowrap; background: url(../images/dot.png) 0px 0.8em repeat-x;}
+.skill{ clear: both; overflow: hidden; white-space: nowrap; background: url(../images/dot.png) 0px 0.8em repeat-x;}
 .skillName{ float: left; background-color: #fff;}
 .skillValue{ margin-top: 4px; padding-right: 1px; display: inline-block; display: -webkit-inline-box;}
 .infoValue{ float: right; background-color: #fff; text-align: right;}
@@ -136,8 +136,8 @@ h1, h2, h3, h4{
 /* STAR RATING */
 .rating {
     color: #a9a9a9;
-    margin: 0;
-    padding: 3px 0 0 0;
+    margin: 0 0 0 0 ;
+    padding: 3px 0 0 0;    
 }
 ul.rating {
     display: inline-block;

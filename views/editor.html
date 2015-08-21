@@ -90,12 +90,14 @@
 				</ul>
 				<attribute items="abSociali" pg="currPg"></attribute>
 			</div>
+
 		</div>
 		
 		<p class="text-center rotatedFloralHeartBullet"></p>
 
 		<div class="row-fluid">		
 			<div class="col-sm-12 col-md-4 col-md-offset-4">
+
 				<H4 class="text-center text-uppercase">Pregi</H4>
 				<ul>
 					<li ng-repeat='item in currPg.talents'>					
@@ -105,7 +107,8 @@
 						</button> 
 					</li>
 				</ul>
-				<div class="row-fluid">
+
+				<div class="row">
 					<div class="col-md-8">          
 						<div class="form-group">
 							<input class="form-control input-md" ng-model='cTalent.label'>
@@ -124,15 +127,17 @@
 						</button>
 					</div>
 				</div>
+
 			</div>
 		</div>
+
 	</fieldset>
 </form>
 <div class="row-fluid">	
 	<div class="col-sm-12 col-md-4 col-md-offset-4">	
 		<div class="btn-group" role="group">
-			<button type="button" class="btn btn-default" ng-click="addPg()" ng-show="myForm.$valid">Add Pg</button>   
-			<button type="button" class="btn btn-default" ng-click="updatePg()" ng-show="myForm.$valid">Save</button>    				
+			<button type="button" class="btn btn-default" ng-click="addPg()" ng-show="myForm.$valid && isNew">Add Pg</button>   
+			<button type="button" class="btn btn-default" ng-click="updatePg()" ng-show="myForm.$valid && !isNew">Save</button>    				
 		</div>
 	</div>
 </div>

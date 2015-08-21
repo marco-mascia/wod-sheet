@@ -1,7 +1,11 @@
 angular.module('controllers', [])
 
-.controller('mainController', function($scope){
-
+.controller('mainController', function($scope, $rootScope, $location){
+	$scope.newPg = function(){
+		console.log('new pg!');
+		$rootScope.isNew = true;
+		$location.path("/editor");		
+	}
 })
 
 .controller('navigationController', function($scope) {
@@ -75,6 +79,7 @@ angular.module('controllers', [])
 		console.log('edit current pg!');
 		$location.path("/editor");
 		$rootScope.currPg = $scope.currPg;
+		$rootScope.isNew = false;
 	}
 
 })
@@ -92,7 +97,7 @@ angular.module('controllers', [])
 		$scope.abSociali = abSociali.getAll();		
 		$scope.isEditor = true;	
 		$scope.cTalent = '';
-
+		console.log('isNew ', $scope.isNew);
 		console.log('rootScope currPg: ', $rootScope.currPg);
 	};
 	
