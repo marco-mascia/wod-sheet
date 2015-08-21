@@ -90,7 +90,23 @@ angular.module('controllers', [])
 	$scope.init = function () {
 		if (!$scope.currPg) { 			            			        		            
 			$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[], 'talents':[]};
+			/*
+			$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[
+							{abId: 'int', label: 'Intelligenza', type: 'men', value: 1},
+							{abId: 'pro', label: 'Prontezza', type: 'men', value: 1},
+							{abId: 'fer', label: 'Fermezza', type: 'men', value: 1},
+							{abId: 'for', label: 'Forza', type: 'fis', value: 1},
+							{abId: 'des', label: 'Destrezza', type: 'fis', value: 1},
+							{abId: 'cos', label: 'Costituzione', type: 'fis', value: 1},
+							{abId: 'pre', label: 'Presenza', type: 'soc', value: 1},
+							{abId: 'asc', label: 'Ascendente', type: 'soc', value: 1},
+							{abId: 'aut', label: 'Autocontrollo', type: 'soc', value: 1}], 'talents':[]};
+			*/
+		}else{
+			$scope.currPg = $rootScope.currPg;
 		}
+	
+
 		$scope.pgList = $firebaseArray(ref);		
 		$scope.abMentali = abMentali_apoc.getAll();	
 		$scope.abFisiche = abFisiche_apoc.getAll();	
@@ -128,7 +144,10 @@ angular.module('controllers', [])
 	};
 
 	$scope.addPg = function(){			
-		console.log('... Add current pg! ...');
+		console.log('... Add current pg! ...', $scope.currPg);
+
+		console.log('$scope.currPg.attributi.cos.value: ', $scope.currPg.attributi.cos.value);
+
 		$scope.currPg.identita.health = parseInt($scope.currPg.attributi.cos.value) + 5;
 		$scope.currPg.identita.currhealth = parseInt($scope.currPg.attributi.cos.value) + 5;
 		$scope.currPg.identita.size = 5;
@@ -143,6 +162,7 @@ angular.module('controllers', [])
 		$scope.currPg.identita.will = parseInt($scope.currPg.attributi.fer.value) + parseInt($scope.currPg.attributi.aut.value);
 		$scope.currPg.identita.currwill = parseInt($scope.currPg.attributi.fer.value) + parseInt($scope.currPg.attributi.aut.value);
 
+		
 		$scope.currPg.attributi.push({'abId': 'int', 'type':'men', 'label':'Intelligenza', 'value': $scope.currPg.attributi.int.value});
 		$scope.currPg.attributi.push({'abId': 'pro', 'type':'men', 'label':'Prontezza', 'value': $scope.currPg.attributi.pro.value});
 		$scope.currPg.attributi.push({'abId': 'fer', 'type':'men', 'label':'Fermezza', 'value': $scope.currPg.attributi.fer.value});
@@ -152,6 +172,8 @@ angular.module('controllers', [])
 		$scope.currPg.attributi.push({'abId': 'pre', 'type':'soc', 'label':'Presenza', 'value': $scope.currPg.attributi.pre.value});
 		$scope.currPg.attributi.push({'abId': 'asc', 'type':'soc', 'label':'Ascendente', 'value': $scope.currPg.attributi.asc.value});
 		$scope.currPg.attributi.push({'abId': 'aut', 'type':'soc', 'label':'Autocontrollo', 'value': $scope.currPg.attributi.aut.value});
+		
+
 		$scope.pgList.$add($scope.currPg);
 		$location.path("/home");
 	};

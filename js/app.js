@@ -92,7 +92,10 @@
 				
 			},
 			link: function(scope, element, attrs){          
-				scope.addSkill = function(){					
+				scope.addSkill = function(){
+					if (!scope.pg.elencoabilita){
+						scope.pg.elencoabilita = [];
+					}
 					var index = scope.pg.elencoabilita.indexOf(scope.sk);
 					if (index == -1) {
 						scope.pg.elencoabilita.push(scope.sk);			

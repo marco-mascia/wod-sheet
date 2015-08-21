@@ -1,3 +1,9 @@
+
+<p>
+myform: {{myForm.$valid}} <br>
+isNew: {{isNew}}
+</p>
+
 <form name="myForm" class="form-horizontal">
 	<fieldset>				
 		<div class="row">	
@@ -34,32 +40,101 @@
 		<div class="row-fluid attributes">
 			<div class="col-sm-4 col-md-4 mental">	
 
-				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'men' }">
+			
+				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'men' }" ng-show="!isNew">
 					<label for="item.abId" class="col-lg-3 control-label">{{item.label}}</label>
 					<div class="col-lg-9">
-						<input type="text" id="item.abId" class="form-control" ng-model="item.value" required>
+						<input type="text" id="item.abId" class="form-control" ng-model="item.value" ng-required="!isNew">
 					</div>
-				</div> 				
+				</div> 
+		
+
+
+				<div class="form-group" ng-show="isNew">
+					<label for="int" class="col-lg-3 control-label">Intelligenza</label>
+					<div class="col-lg-9">
+						<input type="text" id="int" class="form-control" ng-model="currPg.attributi.int.value" ng-required="isNew">
+					</div>
+				</div>
+
+				<div class="form-group" ng-show="isNew">
+					<label for="pro" class="col-lg-3 control-label">Prontezza</label>
+					<div class="col-lg-9">
+						<input type="text" id="pro" class="form-control" ng-model="currPg.attributi.pro.value" ng-required="isNew">
+					</div>
+				</div> 
+
+				<div class="form-group" ng-show="isNew">
+					<label for="fer" class="col-lg-3 control-label">Fermezza</label>
+					<div class="col-lg-9">
+						<input type="text" id="fer" class="form-control" ng-model="currPg.attributi.fer.value" ng-required="isNew">
+					</div>
+				</div>
 
 			</div>
 			<div class="col-sm-4 col-md-4 phisical">
-
-				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'fis' }">
+				
+				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'fis' }" ng-show="!isNew">
 					<label for="item.abId" class="col-lg-3 control-label">{{item.label}}</label>
 					<div class="col-lg-9">
-						<input type="text" id="item.abId" class="form-control" ng-model="item.value" required>
+						<input type="text" id="item.abId" class="form-control" ng-model="item.value" ng-required="!isNew">
 					</div>
 				</div> 
+		
+
+				<div class="form-group" ng-show="isNew">
+					<label for="for" class="col-lg-3 control-label">Forza</label>
+					<div class="col-lg-9">
+						<input type="text" id="for" class="form-control" ng-model="currPg.attributi.for.value" ng-required="isNew">
+					</div>
+				</div>
+
+				<div class="form-group" ng-show="isNew">
+					<label for="des" class="col-lg-3 control-label">Destrezza</label>
+					<div class="col-lg-9">
+						<input type="text" id="des" class="form-control" ng-model="currPg.attributi.des.value" ng-required="isNew">
+					</div>
+				</div> 
+
+				<div class="form-group" ng-show="isNew">
+					<label for="cos" class="col-lg-3 control-label">Costituzione</label>
+					<div class="col-lg-9">
+						<input type="text" id="cos" class="form-control" ng-model="currPg.attributi.cos.value" ng-required="isNew">
+					</div>
+				</div>
 
 			</div>
 			<div class="col-sm-4 col-md-4 social">
 
-				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'soc' }">
+				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'soc' }" ng-show="!isNew">
 					<label for="item.abId" class="col-lg-3 control-label">{{item.label}}</label>
 					<div class="col-lg-9">
-						<input type="text" id="item.abId" class="form-control" ng-model="item.value" required>
+						<input type="text" id="item.abId" class="form-control" ng-model="item.value" ng-required="!isNew">
 					</div>
 				</div> 
+
+
+				<div class="form-group" ng-show="isNew">
+					<label for="pre" class="col-lg-3 control-label">Presenza</label>
+					<div class="col-lg-9">
+						<input type="text" id="pre" class="form-control" ng-model="currPg.attributi.pre.value" ng-required="isNew">
+					</div>
+				</div>
+
+				<div class="form-group" ng-show="isNew">
+					<label for="asc" class="col-lg-3 control-label">Ascendente</label>
+					<div class="col-lg-9">
+						<input type="text" id="asc" class="form-control" ng-model="currPg.attributi.asc.value" ng-required="isNew">
+					</div>
+				</div> 
+
+				<div class="form-group" ng-show="isNew">
+					<label for="aut" class="col-lg-3 control-label">Autocontrollo</label>
+					<div class="col-lg-9">
+						<input type="text" id="aut" class="form-control" ng-model="currPg.attributi.aut.value" ng-required="isNew">
+					</div>
+				</div>
+
 
 			</div>
 		</div>  
