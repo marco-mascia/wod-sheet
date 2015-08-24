@@ -12,8 +12,15 @@ angular.module('controllers', [])
 
 })
 
-.controller('workshopCtrl', function($scope) {	 
-	$scope.tArray = [{name:'Sim', value:'1'},{name:'Sala', value:'2'},{name:'Bim', value:'3'}];
+.controller('workshopCtrl', function($scope, pg, pgList) {	 
+	//$scope.tArray = [{name:'Sim', value:'1'},{name:'Sala', value:'2'},{name:'Bim', value:'3'}];
+	$scope.pg = pg.getPg();
+	$scope.reset = function(){
+		pg.resetPg()
+	};	
+
+	$scope.pgList = pgList.getList();
+
 })
 
 .controller('pgGridCtrl', function($scope, $firebaseArray) {	 
@@ -21,11 +28,9 @@ angular.module('controllers', [])
 
 })
 
-
-.controller('pgCtrl', function($rootScope, $scope, $firebaseArray, $location){
+.controller('pgCtrl', function($rootScope, $scope, $firebaseArray, $location, pg, pgList){
 	console.log('... pgCtrl ...');
-	var ref = new Firebase("https://wod.firebaseio.com/pgList");	
-	$scope.pgList = $firebaseArray(ref);	
+	$scope.pgList = pgList.getList();
 
 	$scope.updateHealth = function() {
 		var pgRef = ref.child($scope.currPg.$id + '/identita');	  
@@ -59,13 +64,13 @@ angular.module('controllers', [])
 		($scope.isEditor ? $scope.isEditor=false : $scope.isEditor=true);
 	};
 
-	$scope.selectPg = function(pg){
-		console.log('selectPg ', pg);
-		$scope.currPg = pg;
-		//$location.path("/home");
+	$scope.selectPg = function(cPg){
+		pg.setPg(cPg);
+		$scope.currPg = pg.getPg();		
 	};
 
-	$scope.backToList = function(){		
+	$scope.backToList = function(){
+
 		$scope.currPg = null;		
 	};
 
@@ -84,37 +89,16 @@ angular.module('controllers', [])
 
 })
 
-.controller('editorCtrl', function($rootScope, $scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali, $location){
+.controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali, $location, pg, pgList){
 
-	var ref = new Firebase("https://wod.firebaseio.com/pgList");
 	$scope.init = function () {
-		if (!$scope.currPg) { 			            			        		            
-			$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[], 'talents':[]};
-			/*
-			$scope.currPg = {'elencoabilita':[], 'identita':{}, 'attributi':[
-							{abId: 'int', label: 'Intelligenza', type: 'men', value: 1},
-							{abId: 'pro', label: 'Prontezza', type: 'men', value: 1},
-							{abId: 'fer', label: 'Fermezza', type: 'men', value: 1},
-							{abId: 'for', label: 'Forza', type: 'fis', value: 1},
-							{abId: 'des', label: 'Destrezza', type: 'fis', value: 1},
-							{abId: 'cos', label: 'Costituzione', type: 'fis', value: 1},
-							{abId: 'pre', label: 'Presenza', type: 'soc', value: 1},
-							{abId: 'asc', label: 'Ascendente', type: 'soc', value: 1},
-							{abId: 'aut', label: 'Autocontrollo', type: 'soc', value: 1}], 'talents':[]};
-			*/
-		}else{
-			$scope.currPg = $rootScope.currPg;
-		}
-	
-
-		$scope.pgList = $firebaseArray(ref);		
+		$scope.currPg = pg.getPg();
+		$scope.pgList = pgList.getList();		
 		$scope.abMentali = abMentali_apoc.getAll();	
 		$scope.abFisiche = abFisiche_apoc.getAll();	
 		$scope.abSociali = abSociali.getAll();		
 		$scope.isEditor = true;	
-		$scope.cTalent = '';
-		console.log('isNew ', $scope.isNew);
-		console.log('rootScope currPg: ', $rootScope.currPg);
+		$scope.cTalent = '';		
 	};
 	
 	$scope.removeSkill = function(skill){
@@ -139,13 +123,13 @@ angular.module('controllers', [])
 	};
 
 	$scope.updatePg = function(){
-		console.log('... Update current pg! ...');
+		console.log('... Update current pg! ...', $scope.currPg);		
+		pgList.saveItem($scope.currPg);
 		$location.path("/home");
 	};
 
 	$scope.addPg = function(){			
 		console.log('... Add current pg! ...', $scope.currPg);
-
 		console.log('$scope.currPg.attributi.cos.value: ', $scope.currPg.attributi.cos.value);
 
 		$scope.currPg.identita.health = parseInt($scope.currPg.attributi.cos.value) + 5;

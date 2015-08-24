@@ -1,11 +1,13 @@
 
-<h1>~ Workshop ~</h1>
+<h3>~ Workshop ~</h3>
 
-<span>{{tArray}}</span>
 
-<ul>
-	<attribute ng-repeat="item in tArray"></attribute>
-</ul>
+<div>	
+	<input type="text" ng-model="pg.name">
+	<button ng-click="reset()">Reset</button>
+	{{pgList}}
+</div>
+
 
 <!--
 <div>

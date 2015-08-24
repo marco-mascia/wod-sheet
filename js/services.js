@@ -1,26 +1,52 @@
 angular.module('services', [])
 
-.factory('pgList', function(){
+
+.service('pg', function(){  
   
-  var pgList = [];
-  
-  var list = {};
-      
-    list.getAll = function(){
-      return pgList;
-    }
-    
-    list.getItem = function(pgId){    
-    for (var i = 0; i < pgList.length; i++) {        
-      if (pgList[i]['charId'] == pgId) {
-        return pgList[i];
-      }
-    }
-    return null;
-    }
-    
-    return list;  
+  var pg = null;
+
+  this.resetPg = function(){
+    console.log('resetPg');    
+    pg = {};
+    pg.elencoabilita = [];
+    pg.identita = {};
+    pg.attributi = [];
+    pg.talents = [];
+  };
+
+  this.getPg = function(){
+    return pg;
+  }
+
+  this.setPg = function(cPg){
+    pg = cPg;
+    console.log('setPg: ', pg);  
+  }
 })
+
+
+.service('pgList', function($firebaseArray){  
+  var ref = new Firebase("https://wod.firebaseio.com/pgList");  
+  var list = $firebaseArray(ref); 
+
+  this.getList = function(){
+    return list;
+  }
+
+  this.saveItem = function(item){
+    console.log('pgList saveItem: ', item);
+    list.$save(item);
+
+    /*
+    list.$save(2).then(function(ref) {
+      ref.key() === list[2].$id;
+    })
+    */
+
+  }
+
+})
+
 
 .factory('abMentali', function(){
 
