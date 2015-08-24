@@ -1,9 +1,10 @@
 angular.module('controllers', [])
 
-.controller('mainController', function($scope, $rootScope, $location){
+.controller('mainController', function($scope, $rootScope, $location, pg){
 	$scope.newPg = function(){
-		console.log('new pg!');
-		$rootScope.isNew = true;
+		console.log('new pg!');		
+		pg.setIsNew(true);
+		pg.resetPg();
 		$location.path("/editor");		
 	}
 })
@@ -17,15 +18,12 @@ angular.module('controllers', [])
 	$scope.pg = pg.getPg();
 	$scope.reset = function(){
 		pg.resetPg()
-	};	
-
+	};
 	$scope.pgList = pgList.getList();
-
 })
 
 .controller('pgGridCtrl', function($scope, $firebaseArray) {	 
 	console.log('... pgGridCtrl ...');
-
 })
 
 .controller('pgCtrl', function($rootScope, $scope, $firebaseArray, $location, pg, pgList){
@@ -70,7 +68,6 @@ angular.module('controllers', [])
 	};
 
 	$scope.backToList = function(){
-
 		$scope.currPg = null;		
 	};
 
@@ -83,8 +80,8 @@ angular.module('controllers', [])
 	$scope.edit = function(){		
 		console.log('edit current pg!');
 		$location.path("/editor");
-		$rootScope.currPg = $scope.currPg;
-		$rootScope.isNew = false;
+		//$rootScope.currPg = $scope.currPg;
+		//$rootScope.isNew = false;
 	}
 
 })
@@ -98,6 +95,7 @@ angular.module('controllers', [])
 		$scope.abFisiche = abFisiche_apoc.getAll();	
 		$scope.abSociali = abSociali.getAll();		
 		$scope.isEditor = true;	
+		$scope.isNew = pg.isNew();
 		$scope.cTalent = '';		
 	};
 	

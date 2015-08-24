@@ -4,6 +4,7 @@ angular.module('services', [])
 .service('pg', function(){  
   
   var pg = null;
+  var isNew = false;
 
   this.resetPg = function(){
     console.log('resetPg');    
@@ -22,6 +23,14 @@ angular.module('services', [])
     pg = cPg;
     console.log('setPg: ', pg);  
   }
+
+  this.setIsNew = function(bool){
+    isNew = bool;
+  }
+
+  this.isNew = function(){
+    return isNew;
+  }
 })
 
 
@@ -32,17 +41,9 @@ angular.module('services', [])
   this.getList = function(){
     return list;
   }
-
   this.saveItem = function(item){
     console.log('pgList saveItem: ', item);
     list.$save(item);
-
-    /*
-    list.$save(2).then(function(ref) {
-      ref.key() === list[2].$id;
-    })
-    */
-
   }
 
 })
