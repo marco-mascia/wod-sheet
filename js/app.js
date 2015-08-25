@@ -78,6 +78,63 @@
 		}
 	})
 
+	.directive('equipment', function(){
+		return{
+			restrict: 'E',			
+			templateUrl: function(){				
+				return 'equipment.html';	
+			},				
+			controller: function($scope, pg, $firebaseArray){
+
+				$scope.addItem = function() {
+					console.log('addItem');
+					console.log($scope.currPg);
+
+					var ref = new Firebase("https://wod.firebaseio.com/pgList");	
+					var list = ref.child($scope.currPg.$id + '/equip');
+					$scope.currPg.equip = $firebaseArray(list);
+					
+					if($scope.newObj != ''){
+						$scope.currPg.equip.$add($scope.newObj).then(function(ref) {							
+							$scope.newObj = '';	  		  
+						});
+					}					
+				};	
+
+
+				$scope.removeItem = function(item){
+					var ref = new Firebase("https://wod.firebaseio.com/pgList");	
+					var list = ref.child($scope.currPg.$id + '/equip');
+					$scope.currPg.equip = $firebaseArray(list);
+
+					/*
+					console.log('$scope.currPg.$id ', $scope.currPg.$id);
+					console.log('$scope.currPg.equip ', $scope.currPg.equip);
+					console.log('index ', $scope.currPg.equip.$indexFor(item));
+					console.log('key ', $scope.currPg.equip.$keyAt(item.$id));
+					*/
+					
+
+					/*
+					$scope.currPg.equip.$remove(item).then(function(ref) {
+					  console.log('ref.key ', ref.key());
+					  console.log('item.$id ', item.$id);
+					  ref.key() === item.$id; // true
+					});
+					*/
+
+					/*
+					console.log('removeItem ', item);
+					var ref = new Firebase("https://wod.firebaseio.com/pgList");	
+					var list = ref.child($scope.currPg.$id + '/equip');
+					$scope.currPg.equip = $firebaseArray(list);					
+					$scope.currPg.equip.$remove(item);					
+					*/
+				};
+			}
+		}
+	})
+
 	.directive('attribute', function(){
 		return{
 			restrict: 'E',

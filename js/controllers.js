@@ -79,9 +79,8 @@ angular.module('controllers', [])
 
 	$scope.edit = function(){		
 		console.log('edit current pg!');
-		$location.path("/editor");
-		//$rootScope.currPg = $scope.currPg;
-		//$rootScope.isNew = false;
+		pg.setIsNew(false);
+		$location.path("/editor");		
 	}
 
 })
@@ -162,19 +161,5 @@ angular.module('controllers', [])
 
 	$scope.init();
 
-})
-
-.controller('EquipController', function($scope, $firebaseArray){
-	var ref = new Firebase("https://wod.firebaseio.com/pgList");	
-
-	$scope.addItem = function() {
-		var list = ref.child($scope.currPg.$id + '/equip');
-		$scope.currPg.equip = $firebaseArray(list);
-		if($scope.newObj != ''){
-			$scope.currPg.equip.$add($scope.newObj).then(function(ref) {
-				var id = ref.key();		  
-				$scope.newObj = '';	  		  
-			});
-		}
-	};	
 });
+

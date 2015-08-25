@@ -1,0 +1,36 @@
+<div class="row-fluid" ng-show="currPg">
+	<div class="col-md-12">
+
+		<H4 class="text-center">Equipaggiamento</H4>
+		<ul>
+			<li ng-repeat="obj in currPg.equip">
+				<div class="row">
+					<div class="col-xs-10"><strong>{{obj.name}}</strong> - <i>{{obj.descr}}</i></div>								
+					<div class="col-xs-2">                                    
+						<button type="button" class="btn btn-sm" aria-label="Left Align" ng-click="removeItem(obj)" data-dismiss="alert">
+							<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+						</button>                                    
+					</div>
+				</div>
+				<br>
+			</li>
+		</ul>
+
+		<p class="text-center rotatedFloralHeartBullet"></p>
+
+		<div class="row-fluid">
+			<div class="col-md-12">
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="newObj.name" placeholder="Oggetto">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control" ng-model="newObj.descr" placeholder="Descrizione">
+				</div>
+				<div class="form-group">
+					<button type="button" class="btn pull-right" aria-label="Left Align" ng-click="addItem()">Aggiungi</button>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

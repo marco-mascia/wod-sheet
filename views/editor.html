@@ -1,6 +1,6 @@
 <form name="myForm" class="form-horizontal">
 	<fieldset>				
-		<div class="row">	
+		<div class="row-fluid">	
 			<div class="col-sm-12 col-md-4 col-md-offset-4">
 
 				<div class="form-group">
@@ -30,10 +30,8 @@
 		<p class="text-center rotatedFloralHeartBullet"></p>
 		<H3 class="text-center text-uppercase">Attributi</H3>
 
-
 		<div class="row-fluid attributes">
-			<div class="col-sm-4 col-md-4 mental">	
-
+			<div class="col-sm-4 col-md-4 mental">
 			
 				<div class="form-group" ng-repeat="item in currPg.attributi | filter: { type: 'men' }" ng-show="!isNew">
 					<label for="item.abId" class="col-lg-3 control-label">{{item.label}}</label>
@@ -41,8 +39,6 @@
 						<input type="text" id="item.abId" class="form-control" ng-model="item.value" ng-required="!isNew">
 					</div>
 				</div> 
-		
-
 
 				<div class="form-group" ng-show="isNew">
 					<label for="int" class="col-lg-3 control-label">Intelligenza</label>
@@ -145,14 +141,15 @@
 				<attribute items="abMentali" pg="currPg"></attribute>
 			</div>
 
-			<div class="col-sm-4">
+			<div class="col-sm-4"  style="clear:both;">
 				<H4 class="text-center">Abilità Fisiche</H4>
 				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
 					<skill></skill>
 				</ul>	        
 				<attribute items="abFisiche" pg="currPg"></attribute>
 			</div>
-			<div class="col-sm-4">
+
+			<div class="col-sm-4"  style="clear:both;">
 				<H4 class="text-center">Abilità Sociali</H4>
 				<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
 					<skill></skill>

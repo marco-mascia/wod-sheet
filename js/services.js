@@ -21,7 +21,6 @@ angular.module('services', [])
 
   this.setPg = function(cPg){
     pg = cPg;
-    console.log('setPg: ', pg);  
   }
 
   this.setIsNew = function(bool){
