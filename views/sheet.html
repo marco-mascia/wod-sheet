@@ -34,17 +34,17 @@
 		<p class="text-center rotatedFloralHeartBullet"></p>
 
 		<div class="col-sm-4 col-md-4 abilities">
-			<H4 class="text-center mental cfix">Abilità Mentali</H4>
+			<H4 class="text-center mental clearfix">Abilità Mentali</H4>
 			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
 				<skill></skill>
 			</ul>
 
-			<H4 class="text-center phisical cfix">Abilità Fisiche</H4>
+			<H4 class="text-center phisical clearfix">Abilità Fisiche</H4>
 			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
 				<skill></skill>
 			</ul>
 
-			<H4 class="text-center social cfix">Abilità Sociali</H4>
+			<H4 class="text-center social clearfix">Abilità Sociali</H4>
 			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
 				<skill></skill>
 			</ul>
@@ -52,8 +52,8 @@
 
 
 		<div class="col-sm-4 col-md-4">
-			<H4 class="text-center merits cfix">Talenti</H4>
-			<ul ng-repeat="attr in currPg.talents">
+			<H4 class="text-center merits clearfix">Pregi</H4>
+			<ul ng-repeat="item in currPg.talents">
 				<skill></skill>
 			</ul>
 		</div>

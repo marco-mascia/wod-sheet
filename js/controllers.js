@@ -53,6 +53,8 @@ angular.module('controllers', [])
 .controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali, $location, pg, pgList){
 	console.log('... editorCtrl ...');
 
+		
+
 	$scope.init = function () {
 		$scope.currPg = pg.getPg();
 		$scope.pgList = pgList.getList();		
@@ -61,7 +63,9 @@ angular.module('controllers', [])
 		$scope.abSociali = abSociali.getAll();		
 		$scope.isEditor = true;	
 		$scope.isNew = pg.isNew();
-		$scope.cTalent = '';		
+		$scope.cTalent = '';	
+		$scope.tList = pgList.getTalentList($scope.currPg);
+		
 	};
 	
 	$scope.removeSkill = function(skill){
@@ -73,16 +77,13 @@ angular.module('controllers', [])
 	};
 
 	$scope.addTalent = function(){
-		console.log('... Add talent ...', $scope.cTalent);	
-		$scope.currPg.talents.push($scope.cTalent);
+		console.log('... Add talent ... ', $scope.cTalent);		
+		$scope.tList.$add($scope.cTalent);		
 	};
 
 	$scope.removeTalent = function(item){
-		console.log('... Remove talent ...', item);	
-		var index = $scope.currPg.talents.indexOf(item);
-		if (index > -1) {
-			$scope.currPg.talents.splice(index, 1);
-		}	
+		console.log('... Remove talent ...', item);		
+		$scope.tList.$remove(item);	
 	};
 
 	$scope.updatePg = function(){

@@ -34,7 +34,7 @@ angular.module('services', [])
 
 
 .service('pgList', function($firebaseArray){  
-  var ref = new Firebase("https://wod.firebaseio.com/pgList");  
+  var ref = new Firebase("https://wod.firebaseio.com/pgList");
   var list = $firebaseArray(ref); 
 
   this.getList = function(){
@@ -49,6 +49,12 @@ angular.module('services', [])
     var eqRef = ref.child(pg.$id + '/equip');
     var eqList = $firebaseArray(eqRef);   
     return eqList;
+  }
+
+  this.getTalentList = function(pg){
+    var tRef = ref.child(pg.$id + '/talents');
+    var tList = $firebaseArray(tRef);   
+    return tList;
   }
 })
 

@@ -66,8 +66,7 @@ h1, h2, h3, h4{
 	text-shadow: 0 0 1px #667;
 }
 
-/* default */
-.cfix{ clear: both; }
+
 
 /* skillbox */
 .skill{ clear: both; overflow: hidden; white-space: nowrap; background: url(../images/dot.png) 0px 0.8em repeat-x;}

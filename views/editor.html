@@ -164,9 +164,9 @@
 		<div class="row-fluid">		
 			<div class="col-sm-12 col-md-4 col-md-offset-4">
 
-				<H4 class="text-center text-uppercase">Pregi</H4>
+				<H4 class="text-center">Pregi</H4>
 				<ul>
-					<li ng-repeat='item in currPg.talents'>					
+					<li ng-repeat='item in tList'>					
 						{{item.label}} {{item.value}}
 						<button type="button" class="btn btn-sm pull-right" aria-label="Left Align" ng-click="removeTalent(item)" data-dismiss="alert">
 							<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
@@ -175,7 +175,7 @@
 				</ul>
 
 				<div class="row">
-					<div class="col-md-8">          
+					<div class="col-md-8">
 						<div class="form-group">
 							<input class="form-control input-md" ng-model='cTalent.label'>
 						</div>    
@@ -188,7 +188,7 @@
 					</div>
 
 					<div class="col-md-2">
-						<button type="button" class="btn btn-md" ng-click="addTalent()" data-dismiss="alert">
+						<button type="button" class="btn btn-md" ng-click="addTalent()">
 							<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
 						</button>
 					</div>
