@@ -4,10 +4,14 @@
 	// configure our routes
 	.config(function($routeProvider) {
 		$routeProvider
-			// route for the home page
-			.when('/home', {
-				templateUrl : 'views/home.html',
-				controller  : 'mainController'
+			// route for the home page			
+			.when('/sheet', {
+				templateUrl : 'views/sheet.html',
+				controller  : 'sheetCtrl'
+			}) 
+			.when('/grid', {
+				templateUrl : 'views/pg-grid.html',
+				controller  : 'pgGridCtrl'
 			})                      
 			.when('/editor', {
 				templateUrl : 'views/editor.html',
@@ -84,52 +88,25 @@
 			templateUrl: function(){				
 				return 'equipment.html';	
 			},				
-			controller: function($scope, pg, $firebaseArray){
+			controller: function($scope, pg, pgList, $firebaseArray){
+
+				$scope.currPg = pg.getPg();
+				$scope.eqList = pgList.getEquipList($scope.currPg);
 
 				$scope.addItem = function() {
-					console.log('addItem');
-					console.log($scope.currPg);
-
-					var ref = new Firebase("https://wod.firebaseio.com/pgList");	
-					var list = ref.child($scope.currPg.$id + '/equip');
-					$scope.currPg.equip = $firebaseArray(list);
-					
+					console.log('addItem');					
 					if($scope.newObj != ''){
-						$scope.currPg.equip.$add($scope.newObj).then(function(ref) {							
+						$scope.eqList.$add($scope.newObj).then(function(ref) {							
 							$scope.newObj = '';	  		  
 						});
 					}					
 				};	
 
-
-				$scope.removeItem = function(item){
-					var ref = new Firebase("https://wod.firebaseio.com/pgList");	
-					var list = ref.child($scope.currPg.$id + '/equip');
-					$scope.currPg.equip = $firebaseArray(list);
-
-					/*
-					console.log('$scope.currPg.$id ', $scope.currPg.$id);
-					console.log('$scope.currPg.equip ', $scope.currPg.equip);
-					console.log('index ', $scope.currPg.equip.$indexFor(item));
-					console.log('key ', $scope.currPg.equip.$keyAt(item.$id));
-					*/
-					
-
-					/*
-					$scope.currPg.equip.$remove(item).then(function(ref) {
-					  console.log('ref.key ', ref.key());
-					  console.log('item.$id ', item.$id);
-					  ref.key() === item.$id; // true
-					});
-					*/
-
-					/*
+				$scope.removeItem = function(item){			
 					console.log('removeItem ', item);
-					var ref = new Firebase("https://wod.firebaseio.com/pgList");	
-					var list = ref.child($scope.currPg.$id + '/equip');
-					$scope.currPg.equip = $firebaseArray(list);					
-					$scope.currPg.equip.$remove(item);					
-					*/
+					$scope.eqList.$remove(item).then(function(ref) {
+					  ref.key() === item.$id; // true
+					});				
 				};
 			}
 		}

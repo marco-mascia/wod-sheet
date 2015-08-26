@@ -1,15 +1,17 @@
-<div class="row-fluid" ng-show="currPg">
+<div class="row-fluid">
 	<div class="col-md-12">
 
 		<H4 class="text-center">Equipaggiamento</H4>
 		<ul>
-			<li ng-repeat="obj in currPg.equip">
+			<li ng-repeat="obj in eqList">
 				<div class="row">
-					<div class="col-xs-10"><strong>{{obj.name}}</strong> - <i>{{obj.descr}}</i></div>								
-					<div class="col-xs-2">                                    
-						<button type="button" class="btn btn-sm" aria-label="Left Align" ng-click="removeItem(obj)" data-dismiss="alert">
+					<div class="col-xs-10">
+						<strong>{{obj.name}}</strong> - <i>{{obj.descr}}</i>
+					</div>
+					<div class="col-xs-2">
+						<button type="button" class="btn btn-sm" aria-label="Left Align" ng-click="removeItem(obj)">
 							<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
-						</button>                                    
+						</button>
 					</div>
 				</div>
 				<br>

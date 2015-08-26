@@ -4,12 +4,64 @@
 		"selected_items":
 		[
 			[
-				"curre",
-				"currhealth"
+				"add",
+				"addItem"
+			],
+			[
+				"cr",
+				"currPg"
+			],
+			[
+				"pg",
+				"pg"
+			],
+			[
+				"ge",
+				"getPg"
+			],
+			[
+				"Get",
+				"getPg"
+			],
+			[
+				"get",
+				"getPg"
 			],
 			[
 				"curr",
-				"currsalute"
+				"currPg"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"lo",
+				"location"
+			],
+			[
+				"cur",
+				"currPg"
+			],
+			[
+				"paddi",
+				"padding-top"
+			],
+			[
+				"el",
+				"element"
+			],
+			[
+				"re",
+				"removeSkill"
+			],
+			[
+				"skill",
+				"skill"
+			],
+			[
+				"curre",
+				"currhealth"
 			],
 			[
 				"pro",
@@ -42,10 +94,6 @@
 			[
 				"fon",
 				"font-weight"
-			],
-			[
-				"paddi",
-				"padding"
 			],
 			[
 				"bor",
@@ -88,10 +136,6 @@
 				"skillList"
 			],
 			[
-				"skill",
-				"skillValue"
-			],
-			[
 				"background-",
 				"background-color"
 			],
@@ -110,10 +154,6 @@
 			[
 				"di",
 				"display"
-			],
-			[
-				"re",
-				"responseText"
 			],
 			[
 				"prod",
@@ -140,20 +180,12 @@
 				"margin-right"
 			],
 			[
-				"add",
-				"addClass"
-			],
-			[
 				"produ",
 				"productItem"
 			],
 			[
 				"rende",
 				"renderList"
-			],
-			[
-				"get",
-				"getProduct"
 			],
 			[
 				"render",
@@ -468,10 +500,6 @@
 				"charDiv"
 			],
 			[
-				"lo",
-				"log"
-			],
-			[
 				"daa",
 				"damage"
 			],
@@ -486,68 +514,35 @@
 			[
 				"ar",
 				"armatura"
-			],
-			[
-				"dama",
-				"damage"
-			],
-			[
-				"roll",
-				"rolls"
-			],
-			[
-				"poo",
-				"poolRoll"
-			],
-			[
-				"abili",
-				"abilitaName"
-			],
-			[
-				"Arm",
-				"ArmidaMischia"
-			],
-			[
-				"getAbi",
-				"getAbilitaValue"
-			],
-			[
-				"armo",
-				"armor"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 3609,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/app.js",
-			"settings":
-			{
-				"buffer_size": 1523,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "views/editor.html",
 			"settings":
 			{
-				"buffer_size": 6724,
+				"buffer_size": 7352,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Gli eroi non danno la caccia alle lepri.\nChi va a caccia senza cane, torna a casa senza lepri.\nLa pazienza, la prima virtù del cacciatore.\nNoi tendiamo alla morte, come la freccia al bersaglio, e mai falliamo la mira.",
+			"contents": "(function(){\n	var app = angular.module('wod', ['services', 'controllers', 'firebase', 'ngRoute'])\n\n	// configure our routes\n	.config(function($routeProvider) {\n		$routeProvider\n			// route for the home page\n			.when('/home', {\n				templateUrl : 'views/home.html',\n				controller  : 'mainController'\n			})                      \n			.when('/editor', {\n				templateUrl : 'views/editor.html',\n				controller  : 'editorCtrl'\n			})\n			.when('/workshop', {\n				templateUrl : 'views/workshop.html',\n				controller  : 'workshopCtrl'\n			});	         \n		})\n\n	.directive('skill', function(){\n		return{\n			restrict: 'E',\n			templateUrl: 'skill.html',		\n			controller: function(){\n				this.skillValue = 0,\n				this.setSkillValue = function(newValue){\n					this.skillValue = newValue;\n				}\n			},\n			controllerAs: 'skillCtrl'\n		};\n	})\n\n	.directive('rating', function(){\n		return{\n			restrict: 'E',			\n			templateUrl: function(elem, attr){				\n				return 'rating.html';	\n			},					\n			controller: function(){},\n			controllerAs: 'rtCtrl'\n		};\n	})\n\n	.directive('bigrating', function(){\n		return{\n			restrict: 'E',	\n			scope:{\n				val: '=',\n				cVal: '='\n			},	\n			templateUrl: function(elem, attr){				\n				return 'bigrating.html';	\n			},					\n			controller: function(){}\n		};\n	})\n\n	.directive('specialization', function(){\n		return{\n			restrict: 'E',\n			scope: {\n				sk: '='\n			},	\n			templateUrl: function(elem, attr){				\n				return 'specialization.html';	\n			},			\n			link: function(scope, element, attrs){				\n				scope.addSpec = function(){																															\n					if (!scope.sk.specialization){\n						scope.sk.specialization = [];\n					}\n					scope.sk.specialization.push(scope.currSpec)				\n				};					\n			},\n		}\n	})\n\n	.directive('equipment', function(){\n		return{\n			restrict: 'E',			\n			templateUrl: function(){				\n				return 'equipment.html';	\n			},				\n			controller: function($scope, pg, $firebaseArray){\n\n				$scope.addItem = function() {\n					console.log('addItem');\n					console.log($scope.currPg);\n\n					var ref = new Firebase(\"https://wod.firebaseio.com/pgList\");	\n					var list = ref.child($scope.currPg.$id + '/equip');\n					$scope.currPg.equip = $firebaseArray(list);\n					\n					if($scope.newObj != ''){\n						$scope.currPg.equip.$add($scope.newObj).then(function(ref) {							\n							$scope.newObj = '';	  		  \n						});\n					}					\n				};	\n\n\n				$scope.removeItem = function(item){\n					var ref = new Firebase(\"https://wod.firebaseio.com/pgList\");	\n					var list = ref.child($scope.currPg.$id + '/equip');\n					$scope.currPg.equip = $firebaseArray(list);\n					\n\n					/*\n					console.log('$scope.currPg.$id ', $scope.currPg.$id);\n					console.log('$scope.currPg.equip ', $scope.currPg.equip);\n					console.log('index ', $scope.currPg.equip.$indexFor(item));\n					console.log('key ', $scope.currPg.equip.$keyAt(item.$id));\n					*/\n					\n\n					/*\n					$scope.currPg.equip.$remove(item).then(function(ref) {\n					  console.log('ref.key ', ref.key());\n					  console.log('item.$id ', item.$id);\n					  ref.key() === item.$id; // true\n					});\n					*/\n\n					/*\n					console.log('removeItem ', item);\n					var ref = new Firebase(\"https://wod.firebaseio.com/pgList\");	\n					var list = ref.child($scope.currPg.$id + '/equip');\n					$scope.currPg.equip = $firebaseArray(list);					\n					$scope.currPg.equip.$remove(item);					\n					*/\n				};\n			}\n		}\n	})\n\n	.directive('attribute', function(){\n		return{\n			restrict: 'E',\n			scope: {				\n				items: \"=\",				\n				pg: \"=\"							\n			},			\n			templateUrl: function(elem, attr){				\n				return 'attribute.html';	\n			},		\n			controller: function($scope){				\n				\n			},\n			link: function(scope, element, attrs){          \n				scope.addSkill = function(){\n					if (!scope.pg.elencoabilita){\n						scope.pg.elencoabilita = [];\n					}\n					var index = scope.pg.elencoabilita.indexOf(scope.sk);\n					if (index == -1) {\n						scope.pg.elencoabilita.push(scope.sk);			\n					}						\n				}				\n			}\n		};\n	})\n\n\n\n	\n\n	\n})();",
+			"file": "js/app.js",
+			"file_size": 3957,
+			"file_write_time": 1440509806000000,
 			"settings":
 			{
-				"buffer_size": 217,
+				"buffer_size": 3963,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/equipment.html",
+			"settings":
+			{
+				"buffer_size": 1248,
 				"line_ending": "Unix"
 			}
 		},
@@ -555,42 +550,15 @@
 			"file": "js/controllers.js",
 			"settings":
 			{
-				"buffer_size": 4440,
+				"buffer_size": 5737,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "attribute.html",
-			"settings":
-			{
-				"buffer_size": 1237,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<h2>home</h2>\n<div ng-controller=\"PgController as pgCtrl\">\n\n	<div class=\"form-group\">\n		<select ng-options=\"item as item.identita.nome for item in pgList\" ng-model=\"currPg\" class=\"form-control input-md\"></select>          \n	</div>\n\n	<div class=\"row identity\" ng-show=\"currPg\">\n	    <H2 class=\"text-center name\">{{currPg.identita.nome}}</H2>\n	    <H3 class=\"text-center concetto\">{{currPg.identita.concetto}}</H3>\n	    <H3 class=\"text-center giocatore\">{{currPg.identita.giocatore}}</H3>\n	    <p class=\"text-center rotatedFloralHeartBullet\"></p>\n	</div>  \n\n	<H3 class=\"text-center text-uppercase\" ng-show=\"currPg\">Attributi</H3>  \n\n	<div class=\"row attributes\" ng-show=\"currPg\">                \n	    <div class=\"col-sm-4 col-md-4 mental\">\n	        <ul ng-repeat=\"item in currPg.attributi | filter: { type: 'men' }\">                                          \n	            <skill></skill>\n	        </ul>\n	    </div>                \n	    <div class=\"col-sm-4 col-md-4 phisical\">\n	        <ul ng-repeat=\"item in currPg.attributi | filter: { type: 'fis' }\">\n	            <skill></skill>\n	        </ul>                \n	    </div>  \n	    <div class=\"col-sm-4 col-md-4 social\">\n	        <ul ng-repeat=\"item in currPg.attributi | filter: { type: 'soc' }\">\n	           <skill></skill>\n	        </ul> \n	    </div>                \n	</div> \n\n\n	<div class=\"row\" ng-show=\"currPg\">                  \n	    <p class=\"text-center rotatedFloralHeartBullet\"></p>    \n	    \n	    <div class=\"col-sm-4 col-md-4 abilities\">\n	        <H4 class=\"text-center text-uppercase mental\">Abilità Mentali</H4>\n	        <ul ng-repeat=\"item in currPg.elencoabilita | filter: { type: 'men' }\">\n	           <skill></skill>\n	        </ul>\n	        <H4 class=\"text-center text-uppercase phisical\">Abilità Fisiche</h4>\n	        <ul ng-repeat=\"item in currPg.elencoabilita | filter: { type: 'fis' }\">\n	           <skill></skill>\n	        </ul>\n	        <H4 class=\"text-center text-uppercase social\">Abilità Sociali</H4>\n	        <ul ng-repeat=\"item in currPg.elencoabilita | filter: { type: 'soc' }\">\n	           <skill></skill>\n	        </ul>\n	    </div>                \n\n	    <!--\n	    <div class=\"col-sm-4 col-md-4\">\n	        <H4 class=\"text-center text-uppercase merits\">Talenti</H4>	        \n	        <H4 class=\"text-center text-uppercase extrainfo\"></H4>               \n	        <ul ng-repeat=\"attr in currPg.talenti\">\n	           <skill></skill>\n	        </ul>\n	    </div>      \n		-->	    \n	    \n	    <div class=\"healthValue text-center clearfix col-sm-4 col-md-4\">\n	       <H4 class=\"text-center text-uppercase\">Salute</H4>     \n	       <input ng-model=\"currPg.identita.currhealth\" ng-change=\"updateHealth()\" type=\"text\"  style=\"width: 80px; text-align: right;\"/>/{{currPg.identita.currhealth}}\n	    </div>\n\n	    <!--\n	    <H4 class=\"text-center text-uppercase willpower col-sm-4 col-md-4\">Volontà</H4>     \n	    <div class=\"willpowerValue text-center clearfix col-sm-4 col-md-4\">\n	        {{currPg.identita.volonta}}\n	    </div>                    \n		-->\n\n	</div> \n\n	<div class=\"row\" ng-show=\"currPg\" ng-controller=\"EquipController as eqCtrl\">\n\n	    <div class=\"col-md-12\">\n	        <H4 class=\"text-center text-uppercase\">Equipaggiamento</H4>\n	        <ul>\n	            <li ng-repeat=\"obj in currPg.equip\">\n	                <div class=\"row\">\n	                  <div class=\"col-xs-12 col-md-3\"><strong>{{obj.name}}</strong> </div>\n	                  <div class=\"col-xs-10\"><i>{{obj.descr}}</i> </div>\n	                  <div class=\"col-xs-2\">\n	                    <div class=\"btn-group\" role=\"group\">\n	                        <button type=\"button\" class=\"btn btn-sm pull-right\" aria-label=\"Left Align\" ng-click=\"currPg.equip.$remove(obj)\" data-dismiss=\"alert\">\n	                            <span class=\"glyphicon glyphicon-trash\" aria-hidden=\"true\"></span>\n	                        </button>                  \n	                    </div>\n	                  </div>\n	                </div>\n	            </li>\n	        </ul>\n	        <p class=\"text-center rotatedFloralHeartBullet\"></p>                                            \n	        <div class=\"row\">\n	          <div class=\"col-sm-4 col-lg-4\">\n	            <div class=\"form-group\">          \n	              <div class=\"col-md-8\">\n	                <input type=\"text\" class=\"form-control\" ng-model=\"newObj.name\" placeholder=\"Oggetto\">\n	              </div>\n	            </div>\n	          </div>\n	          <div class=\"col-sm-4 col-lg-4\">\n	            <div class=\"form-group\">          \n	              <div class=\"col-md-8\">\n	                <input type=\"text\" class=\"form-control\" ng-model=\"newObj.descr\" placeholder=\"Descrizione\">\n	              </div>\n	            </div>\n	          </div> \n	          <div class=\"col-sm-12 col-md-4\">\n	             <div class=\"form-group\">          \n	              <div class=\"col-sm-12 col-md-4\">     \n	                <button type=\"button\" class=\"btn pull-right\" aria-label=\"Left Align\" ng-click=\"addItem()\">\n	                   <span class=\"glyphicon glyphicon-plus\" aria-hidden=\"true\" ></span> Aggiungi\n	                </button>\n	              </div>\n	             </div>\n	          </div>\n	        </div>\n	    </div>\n	</div>    \n\n	    <div class=\"btn-group\" role=\"group\">\n    	<button type=\"button\" class=\"btn btn-default\" ng-click=\"addPg()\">Add Pg</button>    	\n      <button type=\"button\" class=\"btn btn-default\" ng-click=\"removePg()\">Remove Pg</button>\n      <button type=\"button\" class=\"btn btn-default\" ng-click=\"fixMe()\">FixMe</button>        \n    </div>\n\n</div>",
 			"file": "views/home.html",
-			"file_size": 5532,
-			"file_write_time": 1439305032000000,
 			"settings":
 			{
-				"buffer_size": 5527,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "views/workshop.html",
-			"settings":
-			{
-				"buffer_size": 293,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "skill.html",
-			"settings":
-			{
-				"buffer_size": 623,
+				"buffer_size": 4945,
 				"line_ending": "Unix"
 			}
 		},
@@ -598,7 +566,39 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 4093,
+				"buffer_size": 4154,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.html",
+			"settings":
+			{
+				"buffer_size": 4403,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "skill.html",
+			"settings":
+			{
+				"buffer_size": 767,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/services.js",
+			"settings":
+			{
+				"buffer_size": 4264,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "views/workshop.html",
+			"settings":
+			{
+				"buffer_size": 316,
 				"line_ending": "Unix"
 			}
 		}
@@ -627,13 +627,19 @@
 	},
 	"file_history":
 	[
+		"/Users/marcomascia/Documents/wod-sheet/views/pg-grid.html",
+		"/Users/marcomascia/Documents/wod-sheet/attribute.html",
+		"/Users/marcomascia/Documents/wod-sheet/index.html",
+		"/Users/marcomascia/Documents/wod-sheet/skill.html",
+		"/Users/marcomascia/Documents/wod-sheet/specialization.html",
+		"/Users/marcomascia/Documents/wod-sheet/css/bootstrap.min.css",
+		"/Users/marcomascia/Documents/wod-sheet/bigrating.html",
+		"/Users/marcomascia/Documents/wod-sheet/js/controllers.js",
+		"/Users/marcomascia/Documents/wod-sheet/views/workshop.html",
 		"/Users/marcomascia/Documents/wod-sheet/js/services.js",
 		"/Users/marcomascia/Desktop/wildhunt",
 		"/Users/marcomascia/Documents/wod-sheet/rating.html",
-		"/Users/marcomascia/Documents/wod-sheet/skill.html",
 		"/Users/marcomascia/Documents/wod-sheet/workshop.html",
-		"/Users/marcomascia/Documents/wod-sheet/views/workshop.html",
-		"/Users/marcomascia/Documents/wod-sheet/attribute.html",
 		"/Users/marcomascia/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/marcomascia/Documents/wod-sheet/views/home.html",
 		"/Users/marcomascia/Documents/wod-sheet/editor.html",
@@ -748,13 +754,7 @@
 		"/Users/marcomascia/Google Drive/Progetti/WqMaster/dev_wqmaster/resources/rules/rpb-rules.xml",
 		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/layouts/pricing.css",
 		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/css/pure.css",
-		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/css/style.css",
-		"/Users/marcomascia/Downloads/pure-layout-pricing/index.html",
-		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/monsters.js",
-		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/orks_and_goblins.js",
-		"/Users/marcomascia/Google Drive/Progetti/WqMaster/dev_wqmaster/resources/tables/rpbook-monster-tables.xml",
-		"/Users/marcomascia/Google Drive/Progetti/WqMasterJs/resources/monsters-table.js",
-		"/Users/marcomascia/Google Drive/Progetti/Game/zombieland/js/GCore.js"
+		"/Users/marcomascia/Google Drive/Progetti/CombatSimulator/css/style.css"
 	],
 	"find":
 	{
@@ -773,6 +773,25 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"isNew",
+			"rootScope",
+			"\n",
+			"PgList",
+			"controller",
+			"rootscope",
+			"rootScope\n\n\n\n\n",
+			"required",
+			"cfix\n\n\n\n",
+			"uppercase",
+			"pgController",
+			"$scope.attr",
+			"grid-gutter-width\n\n\n",
+			"row",
+			"vl",
+			"}}",
+			"{{",
+			"item.value",
+			"\"",
 			"abFisiche",
 			"attr.valore",
 			"&& !isCreator",
@@ -881,26 +900,7 @@
 			"treasure\n",
 			"rpb-treasure-hoard\n",
 			"treasure\n",
-			"treasure\n\n",
-			"treasure",
-			"dragon",
-			"Breathe fire",
-			"Breathe fire\n",
-			"Giant Attacks",
-			".footer",
-			"footer",
-			"	\n",
-			"getKillButton",
-			"kill",
-			"test",
-			"\"",
-			"back",
-			"portrait",
-			"dragon",
-			"monsters",
-			"</div>",
-			" <div class=\"GeneratorResultSecondaryBG\">",
-			" <div class=\"GeneratorResultPrimeBG\">"
+			"treasure\n\n"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -908,6 +908,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"ng-required=\"isNew\"",
+			"",
+			"val",
+			"",
+			"vl",
+			"'",
 			"item.value",
 			"",
 			"%2F",
@@ -1029,13 +1035,7 @@
 			"{\"id\":\"rpb-fear\", \"value\":5}",
 			"{\"id\":\"rpb-fear\", \"value\":4}",
 			"{\"id\":\"rpb-fear\", \"value\":3}",
-			"{\"id\":\"rpb-fear\", \"value\":2}",
-			"{\"id\":\"rpb-fear\", \"value\":1}",
-			"{\"id\":\"rpb-fear\", \"value\":5}",
-			"{\"id\":\"rpb-fear\", \"value\":6}",
-			"{\"id\":\"rpb-fear\", \"value\":5}",
-			"rpb-break",
-			"rpb-never-pinned"
+			"{\"id\":\"rpb-fear\", \"value\":2}"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1051,28 +1051,28 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "views/editor.html",
 					"settings":
 					{
-						"buffer_size": 3609,
+						"buffer_size": 7352,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1600,
-								1600
+								2779,
+								2779
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"tab_size": 2,
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 402.0,
+						"translation.y": 1296.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1082,15 +1082,15 @@
 					"file": "js/app.js",
 					"settings":
 					{
-						"buffer_size": 1523,
+						"buffer_size": 3963,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1298,
-								1298
+								2577,
+								2577
 							]
 						],
 						"settings":
@@ -1099,57 +1099,31 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 43.0,
+						"translation.y": 1554.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "views/editor.html",
+					"file": "js/equipment.html",
 					"settings":
 					{
-						"buffer_size": 6724,
+						"buffer_size": 1248,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3330,
-								3330
+								1187,
+								1187
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 129.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"settings":
-					{
-						"buffer_size": 217,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								217,
-								217
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1158,19 +1132,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "js/controllers.js",
 					"settings":
 					{
-						"buffer_size": 4440,
+						"buffer_size": 5737,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2306,
-								2306
+								5736,
+								5736
 							]
 						],
 						"settings":
@@ -1179,59 +1153,85 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 716.0,
+						"translation.y": 1943.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "attribute.html",
-					"settings":
-					{
-						"buffer_size": 1237,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								586,
-								589
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
+					"buffer": 4,
 					"file": "views/home.html",
 					"settings":
 					{
-						"buffer_size": 5527,
+						"buffer_size": 4945,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2448,
-								2448
+								3811,
+								3811
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1547.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "css/style.css",
+					"settings":
+					{
+						"buffer_size": 4154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3886,
+								3886
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 24.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "index.html",
+					"settings":
+					{
+						"buffer_size": 4403,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2047,
+								2047
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1241,23 +1241,24 @@
 				},
 				{
 					"buffer": 7,
-					"file": "views/workshop.html",
+					"file": "skill.html",
 					"settings":
 					{
-						"buffer_size": 293,
+						"buffer_size": 767,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								77,
-								81
+								43,
+								43
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1267,24 +1268,24 @@
 				},
 				{
 					"buffer": 8,
-					"file": "skill.html",
+					"file": "js/services.js",
 					"settings":
 					{
-						"buffer_size": 623,
+						"buffer_size": 4264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								471,
-								485
+								759,
+								759
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1295,28 +1296,26 @@
 				},
 				{
 					"buffer": 9,
-					"file": "css/style.css",
+					"file": "views/workshop.html",
 					"settings":
 					{
-						"buffer_size": 4093,
+						"buffer_size": 316,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3778,
-								3778
+								124,
+								124
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1644.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

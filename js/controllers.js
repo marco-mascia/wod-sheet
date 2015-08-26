@@ -9,10 +9,6 @@ angular.module('controllers', [])
 	}
 })
 
-.controller('navigationController', function($scope) {
-
-})
-
 .controller('workshopCtrl', function($scope, pg, pgList) {	 
 	//$scope.tArray = [{name:'Sim', value:'1'},{name:'Sala', value:'2'},{name:'Bim', value:'3'}];
 	$scope.pg = pg.getPg();
@@ -22,54 +18,22 @@ angular.module('controllers', [])
 	$scope.pgList = pgList.getList();
 })
 
-.controller('pgGridCtrl', function($scope, $firebaseArray) {	 
+.controller('pgGridCtrl', function($scope, $firebaseArray, pg, pgList, $location) {	 
 	console.log('... pgGridCtrl ...');
-})
-
-.controller('pgCtrl', function($rootScope, $scope, $firebaseArray, $location, pg, pgList){
-	console.log('... pgCtrl ...');
 	$scope.pgList = pgList.getList();
-
-	$scope.updateHealth = function() {
-		var pgRef = ref.child($scope.currPg.$id + '/identita');	  
-		pgRef.update({
-			"currhealth": $scope.currPg.identita.currhealth
-		});
-	};
-
-	$scope.updateWill = function() {
-		var pgRef = ref.child($scope.currPg.$id + '/identita');	  
-		pgRef.update({
-			"currwill": $scope.currPg.identita.currwill
-		});
-	};
-
-	$scope.updateMorality = function() {
-		var pgRef = ref.child($scope.currPg.$id + '/identita');	  
-		pgRef.update({
-			"morality": $scope.currPg.identita.morality
-		});
-	};
-
-	$scope.getMaxHealth = function(){
-		var lst = ref.child($scope.currPg.$id + '/attributi/fisiche/2');
-		var list =  $firebaseArray(lst);
-		console.log('lst ', lst);
-	};	
-
-	$scope.editor = function(){
-		console.log('isEditor true');		
-		($scope.isEditor ? $scope.isEditor=false : $scope.isEditor=true);
-	};
 
 	$scope.selectPg = function(cPg){
 		pg.setPg(cPg);
-		$scope.currPg = pg.getPg();		
+		$scope.currPg = pg.getPg();	
+		$location.path("/sheet");		
 	};
+	
+})
 
-	$scope.backToList = function(){
-		$scope.currPg = null;		
-	};
+.controller('sheetCtrl', function($scope, $firebaseArray, pg, pgList, $location) {	 
+	console.log('... sheetCtrl ...');
+	$scope.currPg = pg.getPg();
+	$scope.pgList = pgList.getList();
 
 	$scope.deletePg = function(){
 		console.log('remove current pg! ', $scope.currPg);
@@ -78,14 +42,16 @@ angular.module('controllers', [])
 	};
 
 	$scope.edit = function(){		
-		console.log('edit current pg!');
+		console.log('edit');
 		pg.setIsNew(false);
 		$location.path("/editor");		
 	}
 
 })
 
+
 .controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali, $location, pg, pgList){
+	console.log('... editorCtrl ...');
 
 	$scope.init = function () {
 		$scope.currPg = pg.getPg();
@@ -122,7 +88,7 @@ angular.module('controllers', [])
 	$scope.updatePg = function(){
 		console.log('... Update current pg! ...', $scope.currPg);		
 		pgList.saveItem($scope.currPg);
-		$location.path("/home");
+		$location.path("/sheet");
 	};
 
 	$scope.addPg = function(){			
@@ -141,9 +107,7 @@ angular.module('controllers', [])
 			$scope.currPg.identita.defence = parseInt($scope.currPg.attributi.des.value);
 		}		
 		$scope.currPg.identita.will = parseInt($scope.currPg.attributi.fer.value) + parseInt($scope.currPg.attributi.aut.value);
-		$scope.currPg.identita.currwill = parseInt($scope.currPg.attributi.fer.value) + parseInt($scope.currPg.attributi.aut.value);
-
-		
+		$scope.currPg.identita.currwill = parseInt($scope.currPg.attributi.fer.value) + parseInt($scope.currPg.attributi.aut.value);		
 		$scope.currPg.attributi.push({'abId': 'int', 'type':'men', 'label':'Intelligenza', 'value': $scope.currPg.attributi.int.value});
 		$scope.currPg.attributi.push({'abId': 'pro', 'type':'men', 'label':'Prontezza', 'value': $scope.currPg.attributi.pro.value});
 		$scope.currPg.attributi.push({'abId': 'fer', 'type':'men', 'label':'Fermezza', 'value': $scope.currPg.attributi.fer.value});
@@ -152,11 +116,10 @@ angular.module('controllers', [])
 		$scope.currPg.attributi.push({'abId': 'cos', 'type':'fis', 'label':'Costituzione', 'value': $scope.currPg.attributi.cos.value});
 		$scope.currPg.attributi.push({'abId': 'pre', 'type':'soc', 'label':'Presenza', 'value': $scope.currPg.attributi.pre.value});
 		$scope.currPg.attributi.push({'abId': 'asc', 'type':'soc', 'label':'Ascendente', 'value': $scope.currPg.attributi.asc.value});
-		$scope.currPg.attributi.push({'abId': 'aut', 'type':'soc', 'label':'Autocontrollo', 'value': $scope.currPg.attributi.aut.value});
-		
+		$scope.currPg.attributi.push({'abId': 'aut', 'type':'soc', 'label':'Autocontrollo', 'value': $scope.currPg.attributi.aut.value});		
 
 		$scope.pgList.$add($scope.currPg);
-		$location.path("/home");
+		$location.path("/grid");
 	};
 
 	$scope.init();

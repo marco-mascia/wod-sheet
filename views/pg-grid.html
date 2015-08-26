@@ -1,11 +1,9 @@
-<div class="row-fluid">
-	<div class="col-sm-6 col-md-4" ng-repeat="item in pgList">
-		<div class="thumbnail">
-			<div class="caption">
-				<h3>{{item.identita.nome}}</h3>
-				<p>{{item.identita.concetto}}</p>
-				<button class="btn btn-large" role="button" ng-click="selectPg(item)">Scheda</button>
-			</div>
+<div class="col-sm-6 col-md-4" ng-repeat="item in pgList">
+	<div class="thumbnail">
+		<div class="caption">
+			<h3>{{item.identita.nome}}</h3>
+			<p>{{item.identita.concetto}}</p>
+			<button class="btn btn-large" role="button" ng-click="selectPg(item)">Scheda</button>
 		</div>
 	</div>
 </div>

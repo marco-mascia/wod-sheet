@@ -45,6 +45,11 @@ angular.module('services', [])
     list.$save(item);
   }
 
+  this.getEquipList = function(pg){
+    var eqRef = ref.child(pg.$id + '/equip');
+    var eqList = $firebaseArray(eqRef);   
+    return eqList;
+  }
 })
 
 
