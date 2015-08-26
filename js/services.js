@@ -85,7 +85,9 @@ angular.module('services', [])
             {'abId':'m5', 'label':'Pronto soccorso', 'type': 'men'},
             {'abId':'m6', 'label':'Occulto', 'type': 'men'},
             {'abId':'m7', 'label':'Politica', 'type': 'men'},
-            {'abId':'m8', 'label':'Scienze', 'type': 'men'}
+            {'abId':'m8', 'label':'Scienze', 'type': 'men'},
+            {'abId':'m9', 'label':'Accademiche', 'type': 'men'},
+            {'abId':'m10', 'label':'Medicina', 'type': 'men'},
           ];
   
   var list = {};
