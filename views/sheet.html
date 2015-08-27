@@ -3,6 +3,7 @@
 	<div class="row identity" ng-show="currPg">
 		<div class="col-sm-12 col-md-4 col-md-offset-4 col-lg-4 col-lg-offset-4 text-center">
 			<H2 class="text-center name">{{currPg.identita.nome}}</H2>
+			<h3>~</h3>
 			<H3 class="text-center concetto">{{currPg.identita.concetto}}</H3>
 			<H4 class="text-center giocatore">{{currPg.identita.giocatore}}</H4>
 			<p class="text-center rotatedFloralHeartBullet"></p>
@@ -11,7 +12,7 @@
 
 	<H3 class="text-center" ng-show="currPg">Attributi</H3>
 
-	<div class="row attributes" ng-show="currPg">
+	<div class="row-fluid attributes" ng-show="currPg">
 		<div class="col-sm-4 col-md-4 mental">
 			<ul ng-repeat="item in currPg.attributi | filter: { type: 'men' }">
 				<skill></skill>
@@ -30,21 +31,24 @@
 	</div>
 
 
-	<div class="row" ng-show="currPg">
+	<div class="row-fluid" ng-show="currPg">
 		<p class="text-center rotatedFloralHeartBullet"></p>
 
 		<div class="col-sm-4 col-md-4 abilities">
 			<H4 class="text-center mental clearfix">Abilità Mentali</H4>
+			<H6 class="text-center mental clearfix">-3 senza addestramento</H6>
 			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'men' }">
 				<skill></skill>
 			</ul>
 
 			<H4 class="text-center phisical clearfix">Abilità Fisiche</H4>
+			<H6 class="text-center mental clearfix">-1 senza addestramento</H6>
 			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'fis' }">
 				<skill></skill>
 			</ul>
 
 			<H4 class="text-center social clearfix">Abilità Sociali</H4>
+			<H6 class="text-center mental clearfix">-1 senza addestramento</H6>
 			<ul ng-repeat="item in currPg.elencoabilita | filter: { type: 'soc' }">
 				<skill></skill>
 			</ul>
@@ -97,6 +101,13 @@
 
 	</div>
 
+	<div class="row">
+		<div class="col-md-12">
+			<button type="button" class="btn btn-default" ng-click="edit()">Modifica</button>			
+			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Elimina</button>
+		</div>
+	</div>
+
 	<!-- Modal -->
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
@@ -115,12 +126,7 @@
 		</div>
 	</div>
 
-	<div class="row-fluid">
-		<div class="col-md-12">
-			<button type="button" class="btn btn-default" ng-click="edit()">Modifica</button>			
-			<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Elimina</button>
-		</div>
-	</div>
+	
 
 
 

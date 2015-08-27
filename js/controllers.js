@@ -53,7 +53,6 @@ angular.module('controllers', [])
 .controller('editorCtrl', function($scope, $firebaseObject, $firebaseArray, abMentali_apoc, abFisiche_apoc, abSociali, $location, pg, pgList){
 	console.log('... editorCtrl ...');
 
-		
 
 	$scope.init = function () {
 		$scope.currPg = pg.getPg();

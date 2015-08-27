@@ -1,27 +1,21 @@
 <li class="skill">
-	
-	<div class="row-fluid">
-
-		<div class="pull-left">
-			<span class="skillName">{{item.label}}</span>
-		</div>		
-		<div class="pull-right white rating">
-			<rating></rating>			
-		</div>
-		<!--
+	<div class="pull-left">
+		<span class="skillName">{{item.label}}</span>
+	</div>		
+	<div class="pull-right white rating">
+		<rating></rating>			
+	</div>
+	<!--
 		<div class="col-sx-2">
 			<button type="button" class="btn btn-md" aria-label="Left Align" ng-click="removeSkill(item)" data-dismiss="alert" ng-show="isEditor">
 				<span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
 			</button>
 		</div>
-	-->
-	</div>
-		 
+	-->			 
 	<ul ng-show="item.specialization">
 		<li class="spec" ng-repeat="obj in item.specialization">
 			<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span><span>{{obj.label}}</span>
 		</li>
 	</ul>
 	<specialization sk="item" ng-show="isEditor"></specialization>
-
 </li>

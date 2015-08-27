@@ -58,9 +58,9 @@ body {
   padding-top: 70px
 }
 
-ul { margin: 1em; padding: 0;}
+ul { margin: 0; padding: 0.75em 0;}
 ul li, .col-sm-4{ list-style: none;}
-h1, h2, h3, h4{
+h1, h2, h3, h4, h6{
 	font-family: "Essays 1743", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", serif;
 	font-weight: normal;
 	text-shadow: 0 0 1px #667;
